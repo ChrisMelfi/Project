@@ -1,0 +1,37 @@
+extends layout
+
+block content
+  // /.container-fluid
+  .container.text-center
+    // HEADER
+    .page-header
+      h1 Select a Scenario
+      p
+        | Below are three test scenarios, each explaining, demonstrating and testing a different approach to how facial analysis influences user experience.
+    // CONTENT
+    .row
+      .col-sm-4
+        .thumbnail.scenarioselectionbox
+          img.img-circle(src='media/img/scenario_thumb_1.png', alt='Generic placeholder image', width='140')
+          .caption
+            h3 A Helping Hand
+            p Dealing with a user in sadness, distress or pain.
+            p
+              a.btn.btn-primary.btn-lg(href='/scenario_1', role='button') Select Scenario
+      .col-sm-4
+        .thumbnail.scenarioselectionbox
+          img.img-circle(src='media/img/scenario_thumb_2.png', alt='Generic placeholder image', width='140')
+          .caption
+            h3 Pull That Face
+            p Is facial analysis the future of gaming?
+            p
+              a.btn.btn-primary.btn-lg(href='/scenario_2', role='button') Select Scenario
+      .col-sm-4
+        .thumbnail.scenarioselectionbox
+          img.img-circle(src='media/img/scenario_thumb_3.png', alt='Generic placeholder image', width='140')
+          .caption
+            h3 Matters of Privacy
+            p A potential aid in remaining safe online.
+            p
+              a.btn.btn-primary.btn-lg(href='/scenario_3', role='button') Select Scenario
+    // NEXT

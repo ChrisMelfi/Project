@@ -1,0 +1,262 @@
+/* COLORS */
+
+
+/*
+
+dark blue       - #28425F
+blue            - #6286AF
+light blue      - #9ECBFF
+dark grey       - #292929
+light grey      - #EEEEEE
+white           - #ffffff
+black           - #000000
+
+*/
+
+
+/* FONT IMPORTS */
+
+
+@font-face {
+  font-family: 'ProximaNova';
+  src: url('fonts/Proxima Nova/Proxima Nova Thin.otf') format('opentype');
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'ProximaNova';
+  src: url('fonts/Proxima Nova/Proxima Nova Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'ProximaNova';
+  src: url('fonts/Proxima Nova/Proxima Nova Reg.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'ProximaNova';
+  src: url('fonts/Proxima Nova/Proxima Nova Sbold.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'ProximaNova';
+  src: url('fonts/Proxima Nova/Proxima Nova Bold.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'ProximaNova';
+  src: url('fonts/Proxima Nova/Proxima Nova Xbold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'ProximaNova';
+  src: url('fonts/Proxima Nova/Proxima Nova Black.otf') format('opentype');
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'ProximaNova';
+  src: url('fonts/Proxima Nova/Proxima Nova Thin It.otf') format('opentype');
+  font-weight: 200;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'ProximaNova';
+  src: url('fonts/Proxima Nova/Proxima Nova Light It.otf') format('opentype');
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'ProximaNova';
+  src: url('fonts/Proxima Nova/Proxima Nova Reg It.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'ProximaNova';
+  src: url('fonts/Proxima Nova/Proxima Nova Sbold It.otf') format('opentype');
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'ProximaNova';
+  src: url('fonts/Proxima Nova/Proxima Nova Bold It.otf') format('opentype');
+  font-weight: 600;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'ProximaNova';
+  src: url('fonts/Proxima Nova/Proxima Nova Xbold It.otf') format('opentype');
+  font-weight: 700;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'ProximaNova';
+  src: url('fonts/Proxima Nova/Proxima Nova Black It.otf') format('opentype');
+  font-weight: 800;
+  font-style: italic;
+}
+
+
+/* FONTS */
+
+
+html {
+  font-family: 'ProximaNova';
+  font-weight: 400;
+  font-style: normal;
+  font-size: 14pt;
+  color: #292929;
+}
+
+body {
+  font-family: "ProximaNova";
+  font-weight: 400;
+  font-style: normal;
+  font-size: 14pt;
+  color: #292929;
+}
+
+h1 {
+  font-family: 'ProximaNova';
+  font-weight: 700;
+  font-style: normal;
+  font-size: 36pt;
+  color: #292929;
+}
+
+h2 {
+  font-family: 'ProximaNova';
+  font-weight: 700;
+  font-style: normal;
+  font-size: 24pt;
+  color: #6286AF;
+}
+
+h3 {
+  font-family: 'ProximaNova';
+  font-weight: 700;
+  font-style: normal;
+  font-size: 20pt;
+  color: #292929;
+}
+
+h4 {
+  font-family: 'ProximaNova';
+  font-weight: 700;
+  font-style: normal;
+  font-size: 18pt;
+  color: #6286AF;
+}
+
+
+/* NAV */
+
+
+.navbarcustom {
+  background-color: #fff;
+  border: none;
+}
+
+.navbarcustomcurrent {
+  background-color: #fff !important;
+  font-weight: 700 !important;
+  color: #6286AF !important;
+}
+
+
+/* SCENARIOS */
+
+
+.scenarioselectionbox {
+  background-color: #EEEEEE;
+  padding: 30px 0 10px 0;
+  border-radius: 4px;
+}
+
+canvas {
+  width: 100%;
+  margin: 0 0 15px 0;
+}
+
+video {
+  width: 100%;
+  margin: 0 0 15px 0;
+}
+
+.distress_ok {
+  height: 100%;
+  background-color: green;
+  color: white;
+  font-weight: 700;
+  font-size: 24pt;
+  padding: 15px;
+  margin: 15px 0 15px 0;
+}
+
+.distress_help {
+  height: 100%;
+  background-color: red;
+  color: white;
+  font-weight: 700;
+  font-size: 24pt;
+  padding: 15px;
+  margin: 15px 0 15px 0;
+}
+
+
+/* SIMPLE STYLES */
+
+
+.greybackground {
+  background-color: #EEEEEE;
+  border-radius: 4px;
+}
+
+.paddingbottom {
+  padding-bottom: 20px;
+}
+
+.bluebackground {
+  background-color: #6286AF;
+}
+
+
+/* BUTTONS */
+
+
+.btn-primary {
+  background-color: #6286AF;
+}
+
+.btn {
+  font-weight: 600;
+  border-color: #EEEEEE;
+}
+
+.btn-lg {
+  padding: 10px 18px;
+  margin-bottom: 0;
+  font-size: 18px;
+  font-weight: 500;
+  border-radius: 4px;
+  margin-top: 15px;
+}

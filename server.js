@@ -1,0 +1,66 @@
+var express = require('express');
+var path = require('path');
+var logger = require('morgan');
+var compression = require('compression');
+var methodOverride = require('method-override');
+var session = require('express-session');
+var flash = require('express-flash');
+var bodyParser = require('body-parser');
+var expressValidator = require('express-validator');
+var dotenv = require('dotenv');
+var mongoose = require('mongoose');
+
+// Load environment variables from .env file
+dotenv.load();
+
+// Controllers
+var routeController = require('./controllers/route');
+
+var app = express();
+
+
+mongoose.connect(process.env.MONGODB);
+mongoose.connection.on('error', function() {
+  console.log('MongoDB Connection Error. Please make sure that MongoDB is running.');
+  process.exit(1);
+});
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'jade');
+app.set('port', process.env.PORT || 3000);
+app.use(compression());
+app.use(logger('dev'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(expressValidator());
+app.use(methodOverride('_method'));
+app.use(session({ secret: process.env.SESSION_SECRET, resave: true, saveUninitialized: true }));
+app.use(flash());
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.get('/', routeController.home);
+app.get('/about', routeController.about);
+app.get('/data', routeController.data);
+app.get('/feedback_form', routeController.feedback_form);
+app.get('/new_user', routeController.new_user);
+app.get('/scenario_1', routeController.scenario_1);
+app.get('/scenario_1_active', routeController.scenario_1_active);
+app.get('/scenario_2', routeController.scenario_1);
+app.get('/scenario_2_active', routeController.scenario_2_active);
+app.get('/scenario_3', routeController.scenario_1);
+app.get('/scenario_3_active', routeController.scenario_3_active);
+app.get('/splash', routeController.splash);
+app.get('/terms', routeController.terms);
+
+// Production error handler
+if (app.get('env') === 'production') {
+  app.use(function(err, req, res, next) {
+    console.error(err.stack);
+    res.sendStatus(err.status || 500);
+  });
+}
+
+app.listen(app.get('port'), function() {
+  console.log('Express server listening on port ' + app.get('port'));
+});
+
+module.exports = app;

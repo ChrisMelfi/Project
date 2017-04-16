@@ -1,0 +1,33 @@
+extends layout
+
+block content
+  // /.container-fluid
+  .container.text-center
+    // HEADER
+    .page-header
+      h1 A Helping Hand
+      p
+        | In this test we will be looking at the accuracy of Google's response to a user's sadness, distress and pain.
+    // CONTENT
+    .row
+      .col-sm-6.text-left
+        h2 Why
+        p
+          | If you notice that a friend is having a rough day, is upset or even just stressed, wouldn't you want to do something about it?
+        p
+          | Sadly, people aren't always around to notice. Giving a computer the power to act with compassion, empathy and general kindness isn't just worth trying from a technical perspective, but could genuinely help someone out. Whether it's some sad news or painful emergency, emotion recognition might help.
+        p
+          | Of course, initially recognising the emotion would only be a small part of the entire process... but how close are we?
+      .col-sm-6.text-left
+        h2 How
+        p
+          | When you press begin test, you'll have a total of 10 seconds in which to choose and show particular facial expressions you personally associate with sadness, distress or pain.
+        p
+          | Once the script picks up an expression it associates with any of the above, it will respond with a demonstrative scenario.
+        p Please try to be as realistic as possible.
+        p
+          b
+            | Note: you are welcome to show alternative expressions... we hope that’ll be ignored by the scripts.
+    .row
+      a.btn.btn-default.btn-lg(href='/', role='button') Back
+      a.btn.btn-primary.btn-lg(href='/scenario_1_active', role='button') Begin Scenario

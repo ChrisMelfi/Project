@@ -1,0 +1,35 @@
+extends layout
+
+block content
+  // /.container-fluid
+  .container.text-center
+    // HEADER
+    .page-header
+      h1 About Project
+      p
+        | Below are three test scenarios, each explaining, demonstrating and testing a different approach to how facial analysis influences user experience.
+    // CONTENT
+    .row.text-left
+      .col-sm-3
+        img.img-rounded(src='media/img/about_photo.jpg', alt='Chris Melfi Portrait Photo', width='100%')
+      .col-sm-4
+        h2 Chris Melfi
+        p Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        p
+          | Cras dapibus vulputate diam eu pretium. Mauris elit orci, ultricies id fermentum vel, porta et eros.
+      .col-sm-5
+        h2 Google Vision API
+        p
+          | Vestibulum at eros nisl. Fusce lobortis erat ante, eu cursus sapien molestie at. Pellentesque placerat ante diam, et euismod lacus dictum vel.
+        p
+          | Aenean commodo scelerisque mi 
+          a sed imperdiet.
+    .row.text-left
+      .col-sm-12
+        h2 Information
+        p
+          | Mauris lacinia porta faucibus. Fusce eu est ac eros vulputate mollis in ac felis. Aenean commodo scelerisque mi sed imperdiet. Donec at hendrerit nisi, eget vestibulum nisi. Sed sit amet magna luctus, facilisis erat quis, sagittis ligula.
+        p
+          | Aenean dignissim velit quis leo consequat ultricies. Proin quis pretium justo. Vestibulum at eros nisl. Fusce lobortis erat ante, eu cursus sapien molestie at. Pellentesque placerat ante diam, et euismod lacus dictum vel. Phasellus vitae sollicitudin mi.
+    .row
+      a.btn.btn-primary.btn-lg.bluebackground(href='/', role='button') Return to Scenario Selection
