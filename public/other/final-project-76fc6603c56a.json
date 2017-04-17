@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "final-project-156014",
+  "private_key_id": "76fc6603c56ac59e2fe2fd268bd6f38821025673",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCaTe53vkk/43FH\nkxjQmrgZUFRuRGZFgeWteqDdWia5gUA/jd4/eKuEyW+Li7XtQI/Tqep95wUzAKE9\nfWqBvdw8JT7AG+scCy9oh9tXIMmIBQV0dpnsiUoqHAOSDhSwNNXjwVQ5yzBFBf4g\niZJyQ2Vwx0Sg1SD4wWhCH3uZZ7kUDMJkQuiPVNrVFp/KawWQQiEButSBhv8hKrRq\nyiYdknoVf3wNe0xc4cYDhykc1cay7TD2iO487ohlgEEkmmAY+IqjoE1otRDtU7bt\neKkRWtc8y7Z66gfw6it5dLggexnU5nfp9F9/U9lyEApMwBH+/UT0zQJid1oky+Ou\nZFSE5z0TAgMBAAECggEAHyKqg675yNJ0ASVFVJJjo3f6EWXr3Qqg9ahQ3VlbhwL1\nm91cgyIuOdULlPTT+NOWMfePQWhkPC5cWrP70cIltl0tlEYN4tK+9jCzqZkMEU4y\nE5X66Seqt2R/s/Dza7q9jf9sp1zAmKzk4lvgGP5QcblDt9BJnugnyW/g2Mt9JPY9\n6PfEL4cuWN/ftDQ47lFvCtEQUfi2X4yyn7jXDVvRRgeXjIdHk+t2FyWn+vnPEFw4\n58Qc/uRC8fjbyAo5tI25lZM7RGheVR9yaxKStF3bPVSn7AA3gROpUp7+YEWVoXSC\nT0LacIYoADeyJeb8XwBpeGUDSSNIWv1DlzJDRgKjAQKBgQDLIYG1DBGfxbu8DSko\nBCLpZnrpc9hIFkH3xKgwnQzqhPCrX6sQgOBsDKZmmyoaveDNZjjaugHgmHJJAMO4\nfUQO8UJ/LRr6qBNgR2iEvZh3f8NVS2e7BXCFUGVl8o45D63UyU9kJSq3Abry2Y4w\nmaH1i/QdqzsV6URh7UHdOoyBcQKBgQDCdyVNY8JD4vEaLLAIjVCr/IGFtbJFNUi2\n1U0JXDoCwI0A6yoiPnGX3KHmRO1MDP1Xj8BDxc3NAQRpLXqg0U0Q7W7616PyFFr8\nJ+b9Ugt67w7IUPVNDLYAe5lyGMlMbHB47g6R+apJMBE2eHA/wCw4eSNQioF26JCr\n8pRnBhjkwwKBgQDDQ69i8XoTo0mHSQNyIx/IS6oFtkWHblX1rkabjKz419hedPWF\nRM33L+XZpnjAAh0SdZxbrgjV9NWPlbuPImOFFah9hkd0ApO1ro8rYvIolVmZKYZK\ngr0aeiEu8g6Dja3laar2sr+v8mravgVwdI768pE04ABJXNZOaHszBfBBEQKBgHeL\nhwLsMKBLAqx0jEK1nMIdmAH6kHy7JNhAh/sZFxBaDlRiPKSQfoQ8vcow1S/LTHJn\njGodT0aXOX7u1lPGVvnw/Ch4J/DJUqVwYi+YIDaSfyPloOacycXCNbJOSnEQuJOe\nxJY4RNZ5FhvGLjsCiCyvS2ZXvv66OTV7Cn/K38LBAoGALJcj+pErhZPvtYoVkark\n8cirnAwha434FBBiUPpakMhxde3U+jruORHTLajXl7WK3Mh7f1RWqyqKRnJxpaad\nsS7HkrzCfDgsGO8bwfQ6CPxZ7/5T2ICCG3Vn0JeuCiBYTYj5aYfLEv2oChBbmQ1s\n1rkkyGJ337zJcyEWPuQA0h4=\n-----END PRIVATE KEY-----\n",
+  "client_email": "facial-analysis-service-accoun@final-project-156014.iam.gserviceaccount.com",
+  "client_id": "118322163327971893573",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/facial-analysis-service-accoun%40final-project-156014.iam.gserviceaccount.com"
+}
