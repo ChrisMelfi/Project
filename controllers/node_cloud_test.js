@@ -22,7 +22,7 @@ exports.upload = function(req, res) {
   const newThing = req.body.img;
   var filepath = base64Img.imgSync(newThing, 'public/media/temp/', 'image166');
   // console.log(req.body.img)
-  const newfileName = 'public/media/temp/image166';
+  const newfileName = 'public/media/temp/image166.jpg';
 
   return storage.bucket(bucketName).upload(newfileName)
     .then((results) => {
