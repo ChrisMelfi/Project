@@ -12,12 +12,11 @@ const bucketName = 'facialanalysisbucket';
 const fileName = 'test-image.png';
 
 
-
 exports.upload = function(req, res) {
   // Uploads a file to the bucket
-  //base64Img.img(req.dataURL, 'dest', '1', function(err, filepath) {});
+  base64Img.img(req.dataURL, '/media/temp/', '1', function(err, filepath) {});
 
-  const newfileName = base64Img.imgSync(req.dataURL);
+  const newfileName = base64Img.imgSync(req.dataUrl, '', '2');
 
   return storage.bucket(bucketName).upload(newfileName)
     .then((results) => {
