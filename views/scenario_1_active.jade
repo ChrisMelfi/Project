@@ -50,6 +50,10 @@ block content
     function snap()  {
     context.fillRect(0,0,w,h);
     context.drawImage(video,0,0,w,h);
+    var dataURL = canvas.get(0).toDataURL();
+    var img = $("<img></img>");
+    img.attr("src", dataURL);
+    canvas.replaceWith(img);
     }
     //TIMER COUNT
     function begincount()  {
