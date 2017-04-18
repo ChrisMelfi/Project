@@ -13,6 +13,7 @@ const bucketName = 'facialanalysisbucket';
 const fileName = 'test-image.png';
 
 // Performs face detection on the remote file
+/*
 vision.detectFaces(storage.bucket(bucketName).file(fileName))
   .then((results) => {
     const faces = results[0];
@@ -25,4 +26,19 @@ vision.detectFaces(storage.bucket(bucketName).file(fileName))
       console.log(`    Sorrow: ${face.sorrow}`);
       console.log(`    Surprise: ${face.surprise}`);
     });
+  });
+*/
+
+
+
+
+// Lists files in the bucket
+return storage.bucket(bucketName).getFiles()
+  .then((results) => {
+    const files = results[0];
+
+    console.log('Files:');
+    files.forEach((file) => console.log(file.name));
+
+    return files;
   });
