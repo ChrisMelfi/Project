@@ -41,27 +41,35 @@ block content
     //add loadedmetadata which will helps to identify video attributes......
     video.addEventListener('loadedmetadata',function()
     {
-    ratio=video.videoWidth/video.videoHeight;
-    w=video.videoWidth-100;
-    h=parseInt(w/ratio,10);
-    canvas.width=w;
-    canvas.height=h;
+      ratio=video.videoWidth/video.videoHeight;
+      w=video.videoWidth-100;
+      h=parseInt(w/ratio,10);
+      canvas.width=w;
+      canvas.height=h;
     },false);
     ///define a function
     function snap()  {
-    context.fillRect(0,0,w,h);
-    context.drawImage(video,0,0,w,h);
-    var dataURL = canvas.toDataURL();
-    document.getElementById("texturlpng").innerHTML = dataURL;
+      context.fillRect(0,0,w,h);
+      context.drawImage(video,0,0,w,h);
+      var dataURL = canvas.toDataURL();
+      document.getElementById("texturlpng").innerHTML = dataURL;
+      $.ajax({
+        type: "POST",
+        url: "js/node_cloud_test.js",
+      })
+      .done(function (msg) {
+          alert("Data Saved: " + msg);
+      });
     }
     //TIMER COUNT
     function begincount()  {
-    var timeleft = 20;
-    var downloadTimer = setInterval(function(){
-    timeleft--;
-    document.getElementById("countdowntimer").textContent = timeleft;
-    if(timeleft <= 0) {
-    clearInterval(downloadTimer);
+      var timeleft = 20;
+      var downloadTimer = setInterval(function(){
+        timeleft--;
+        document.getElementById("countdowntimer").textContent = timeleft;
+        if(timeleft <= 0) {
+          clearInterval(downloadTimer);
+        }
+      },1000);
     }
-    },1000);
-    }
+    

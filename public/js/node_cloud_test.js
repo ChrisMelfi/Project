@@ -12,9 +12,6 @@ const bucketName = 'facialanalysisbucket';
 // The path to the file within the bucket, e.g. "path/to/image.png"
 const fileName = 'test-image.png';
 
-
-const newfileName = 'public/js/test1.png';
-
 // Performs face detection on the remote file
 /*
 vision.detectFaces(storage.bucket(bucketName).file(fileName))
@@ -31,10 +28,6 @@ vision.detectFaces(storage.bucket(bucketName).file(fileName))
     });
   });
 
-
-
-
-
 // Lists files in the bucket
 return storage.bucket(bucketName).getFiles()
   .then((results) => {
@@ -49,12 +42,16 @@ return storage.bucket(bucketName).getFiles()
 */
 
   // Uploads a local file to the bucket, e.g. "./local/path/to/file.txt"
-  return storage.bucket(bucketName).upload(newfileName)
-    .then((results) => {
-      const file = results[0];
 
-      console.log(`File ${file.name} uploaded.`);
+const newfileName = ajaxsentname;
 
-      return file;
-    });
+return storage.bucket(bucketName).upload(newfileName)
+  .then((results) => {
+    const file = results[0];
+
+    console.log(`File ${file.name} uploaded.`);
+
+    return file;
+  });
+  
 // [END storage_upload_file]
