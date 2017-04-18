@@ -17,7 +17,7 @@ block content
     .row.greybackground
       .col-sm-6
         h4 Live Video
-        video#video(autoplay='true', onplay='snap();setInterval(snap, 1500);begincount()')
+        video#video(autoplay='true', onplay='snap();setInterval(snap, 5000);begincount()')
           | Video stream not available.
       .col-sm-6
         h4 Tested Frames
@@ -52,13 +52,20 @@ block content
       context.fillRect(0,0,w,h);
       context.drawImage(video,0,0,w,h);
       var dataURL = canvas.toDataURL();
+      var fixedString = 
       document.getElementById("texturlpng").innerHTML = dataURL;
       $.ajax({
+        url: "/send-image",
         type: "POST",
-        url: "js/node_cloud_test.js",
-      })
-      .done(function (msg) {
-          alert("Data Saved: " + msg);
+        data: dataURL,
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        success: function () {
+          alert('Image Uploaded!!');
+        },
+        error: function () {
+          alert("There was some error while uploading Image");
+        }
       });
     }
     //TIMER COUNT
@@ -72,4 +79,3 @@ block content
         }
       },1000);
     }
-    
