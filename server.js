@@ -37,8 +37,8 @@ app.use(methodOverride('_method'));
 app.use(session({ secret: process.env.SESSION_SECRET, resave: true, saveUninitialized: true }));
 app.use(flash());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(bodyParser.json({limit: '50mb'}));
-app.use(bodyParser.urlencoded({limit: '50mb', extended: true, parameterLimit:5000000}));
+app.use(bodyParser.json({limit: '50mb', type: 'application/json'}));
+app.use(bodyParser.urlencoded({limit: '50mb', extended: true, parameterLimit:5000000, type: 'application/json'}));
 
 app.get('/', routeController.home);
 app.get('/about', routeController.about);

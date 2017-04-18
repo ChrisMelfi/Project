@@ -52,11 +52,11 @@ block content
     function snap()  {
       context.fillRect(0,0,w,h);
       context.drawImage(video,0,0,w,h);
-      var dataURL = canvas.toDataURL('image/png');
-      var imgString = '';
+      var dataURL = canvas.toDataURL('image/jpeg', 0.9);
+      //- var imgString = '';
       var testObj = JSON.stringify({'img': dataURL});
       //- var fixedString = 
-      document.getElementById("texturlpng").innerHTML = dataURL;
+      document.getElementById("texturlpng").innerHTML = testObj;
       $.ajax({
         url: "/sendimage",
         type: "POST",
@@ -64,7 +64,7 @@ block content
         contentType: "application/json; charset=utf-8",
         dataType: "json",
         success: function () {
-          console.log('success');
+          //- console.log('success');
           //- alert('Image Uploaded!!');
         },
         error: function () {
