@@ -24,14 +24,14 @@ exports.upload = function(req, res) {
   // console.log(req.body.img)
   const newfileName = 'public/media/temp/image166.jpg';
 
-  return storage.bucket(bucketName).upload(newfileName)
-    .then((results) => {
-      const file = results[0];
+  // return storage.bucket(bucketName).upload(newfileName)
+  //   .then((results) => {
+  //     const file = results[0];
 
-      console.log(`File ${file.name} uploaded.`);
+  //     console.log(`File ${file.name} uploaded.`);
 
-      return file;
-    });
+  //     return file;
+  //   });
 };
 // [END storage_upload_file]
 

@@ -12,12 +12,12 @@ block content
     .row
       h3
         | Scenario ends in 
-        span#countdowntimer 20 
+        span#countdowntimer 12 
         |  Seconds
     .row.greybackground
       .col-sm-6
         h4 Live Video
-        video#video(autoplay='true', onplay='snap();setInterval(snap, 5000);begincount()')
+        video#video(autoplay='true', onplay='snap();setInterval(snap, 2000);begincount()')
         // video#video(autoplay='true', onplay='snap()')
           | Video stream not available.
       .col-sm-6
@@ -64,17 +64,16 @@ block content
         contentType: "application/json; charset=utf-8",
         dataType: "json",
         success: function () {
-          //- console.log('success');
-          //- alert('Image Uploaded!!');
+          console.log('success');
         },
         error: function () {
-          //- alert("There was some error while uploading Image");
+          console.log('There was some error while uploading Image');
         }
       });
     }
     //TIMER COUNT
     function begincount()  {
-      var timeleft = 20;
+      var timeleft = 12;
       var downloadTimer = setInterval(function(){
         timeleft--;
         document.getElementById("countdowntimer").textContent = timeleft;
