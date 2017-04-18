@@ -37,6 +37,8 @@ app.use(methodOverride('_method'));
 app.use(session({ secret: process.env.SESSION_SECRET, resave: true, saveUninitialized: true }));
 app.use(flash());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(bodyParser.json({limit: "50mb"}));
+app.use(bodyParser.urlencoded({limit: "50mb", extended: true, parameterLimit:50000000}));
 
 app.get('/', routeController.home);
 app.get('/about', routeController.about);
@@ -51,7 +53,7 @@ app.get('/scenario_3', routeController.scenario_1);
 app.get('/scenario_3_active', routeController.scenario_3_active);
 app.get('/splash', routeController.splash);
 app.get('/terms', routeController.terms);
-app.post('/send-image', sendImage.upload);
+app.post('/sendimage', sendImage.upload);
 
 
 // Production error handler

@@ -52,20 +52,20 @@ block content
     function snap()  {
       context.fillRect(0,0,w,h);
       context.drawImage(video,0,0,w,h);
-      var dataURL = canvas.toDataURL();
+      var dataURL = canvas.toDataURL('image/png');
       var fixedString = 
       document.getElementById("texturlpng").innerHTML = dataURL;
       $.ajax({
-        url: "/send-image",
+        url: "/sendimage",
         type: "POST",
         data: dataURL,
         contentType: "application/json; charset=utf-8",
         dataType: "json",
         success: function () {
-          alert('Image Uploaded!!');
+          //- alert('Image Uploaded!!');
         },
         error: function () {
-          alert("There was some error while uploading Image");
+          //- alert("There was some error while uploading Image");
         }
       });
     }
