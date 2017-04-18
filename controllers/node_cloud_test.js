@@ -19,7 +19,9 @@ exports.upload = function(req, res) {
   */
 
   // Uploads a file to the bucket
-  console.log('11111')
+  // console.log('11111')
+  console.log(req.body.img)
+
   // var filepath = base64Img.imgSync(req.dataURL, 'public/media/temp/', 'image111');
 
   // const newfileName = 'public/media/temp/image111';

@@ -53,15 +53,18 @@ block content
       context.fillRect(0,0,w,h);
       context.drawImage(video,0,0,w,h);
       var dataURL = canvas.toDataURL('image/png');
-      var fixedString = 
+      var imgString = '';
+      var testObj = JSON.stringify({'img': dataURL});
+      //- var fixedString = 
       document.getElementById("texturlpng").innerHTML = dataURL;
       $.ajax({
         url: "/sendimage",
         type: "POST",
-        data: dataURL,
+        data: testObj,
         contentType: "application/json; charset=utf-8",
         dataType: "json",
         success: function () {
+          console.log('success');
           //- alert('Image Uploaded!!');
         },
         error: function () {
