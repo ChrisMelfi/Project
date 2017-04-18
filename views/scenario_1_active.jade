@@ -17,7 +17,8 @@ block content
     .row.greybackground
       .col-sm-6
         h4 Live Video
-        video#video(autoplay='true', onplay='snap();setInterval(snap, 5000);begincount()')
+        // video#video(autoplay='true', onplay='snap();setInterval(snap, 5000);begincount()')
+        video#video(autoplay='true', onplay='snap()')
           | Video stream not available.
       .col-sm-6
         h4 Tested Frames

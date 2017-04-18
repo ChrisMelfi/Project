@@ -15,9 +15,9 @@ const fileName = 'test-image.png';
 
 exports.upload = function(req, res) {
   // Uploads a file to the bucket
-  base64Img.img(req.dataURL, 'dest', '1', function(err, filepath) {});
+  //base64Img.img(req.dataURL, 'dest', '1', function(err, filepath) {});
 
-  const newfileName = base64Img.imgSync(req.dataURL, '', '2');
+  const newfileName = base64Img.imgSync(req.dataURL);
 
   return storage.bucket(bucketName).upload(newfileName)
     .then((results) => {
