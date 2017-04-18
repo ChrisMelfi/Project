@@ -25,6 +25,7 @@ block content
           canvas#canvas
     .row.greybackground
       .col-sm-12.distress_ok User appears to be OK.
+      p#texturlpng no
       .col-sm-12.distress_help Hey, is everything ok? You're looking a little upset.
     .row
       a.btn.btn-default.btn-lg(href='/', role='button') Back
@@ -50,10 +51,8 @@ block content
     function snap()  {
     context.fillRect(0,0,w,h);
     context.drawImage(video,0,0,w,h);
-    var dataURL = canvas.get(0).toDataURL();
-    var img = $("<img></img>");
-    img.attr("src", dataURL);
-    canvas.replaceWith(img);
+    var dataURL = canvas.toDataURL();
+    document.getElementById("texturlpng").innerHTML = dataURL;
     }
     //TIMER COUNT
     function begincount()  {
