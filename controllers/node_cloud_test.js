@@ -1,4 +1,7 @@
 var vision = require('@google-cloud/vision');
+const base64Img = require('base64-img');
+
+const uploadedFile = 'public/media/temp/image166.jpg';
 
 // Authenticating on a per-API-basis. You don't need to do this if you auth on a
 // global basis (see Authentication section above).
@@ -8,21 +11,32 @@ var visionClient = vision({
   keyFilename: 'public/other/final-project-76fc6603c56a.json'
 });
 
-// Detect faces and the locations of their features in an image.
-visionClient.detectFaces('public/media/temp/joy.jpg')
-  .then((results) => {
-  const faces = results[0];
+exports.upload = function(req, res) {
 
-  console.log('Faces:');
-  faces.forEach((face, i) => {
-    console.log(`  Face #${i + 1}:`);
-    console.log(`    Joy: ${face.joy}`);
-    console.log(`    Anger: ${face.anger}`);
-    console.log(`    Sorrow: ${face.sorrow}`);
-    console.log(`    Surprise: ${face.surprise}`);
-  });
 
-});
+	// Saves base64 as image.jpg into public/media/temp
+	const base64image = req.body.img;
+	var filepath = base64Img.imgSync(base64image, 'public/media/temp/', 'image166');
+
+	// Detect faces and the locations of their features in an image.
+	visionClient.detectFaces(uploadedFile)
+	  .then((results) => {
+	  const faces = results[0];
+
+	  console.log('Faces:');
+	  faces.forEach((face, i) => {
+		  const joyvalue = `Joy: ${face.joy}`;
+		  const angervalue = `Anger: ${face.anger}`;
+		  const sorrowvalue = `Sorrow: ${face.sorrow}`;
+		  const surprisevalue = `Suprise: ${face.surprise}`;
+	    console.log(`  Face #${i + 1}:`);
+	    console.log(joyvalue, angervalue, sorrowvalue, surprisevalue);
+    	// res.send({status: joyvalue, angervalue, sorrowvalue, surprisevalue});
+    	res.json({status: 'hello'});
+	  });
+	});
+};
+
 
 /*
 // Imports the Google Cloud client libraries
