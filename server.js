@@ -15,7 +15,7 @@ dotenv.load();
 
 // Controllers
 var routeController = require('./controllers/route');
-var sendImage = require('./controllers/node_cloud_test');
+//var sendImage = require('./controllers/node_cloud_test');
 
 var app = express();
 
@@ -55,7 +55,7 @@ app.get('/scenario_3_active', routeController.scenario_3_active);
 app.get('/scenario_3_feedback', routeController.scenario_3_feedback);
 app.get('/splash', routeController.splash);
 app.get('/terms', routeController.terms);
-app.post('/sendimage', sendImage.upload);
+//app.post('/sendimage', sendImage.upload);
 
 
 // Production error handler

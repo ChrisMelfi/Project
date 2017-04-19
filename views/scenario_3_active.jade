@@ -61,17 +61,17 @@ block content
       //- var imgString = '';
       var testObj = JSON.stringify({'img': dataURL});
       //- var fixedString = 
-      $.ajax({
-        url: "/sendimage",
-        type: "POST",
-        data: testObj,
-        contentType: "application/json; charset=utf-8",
-        dataType: "json",
-        success: function () {
-          console.log('YES WE DID IT');
-          document.getElementById("texturlpng").innerHTML = 'emotion';
-        },
-      });
+      //- $.ajax({
+      //-   url: "/sendimage",
+      //-   type: "POST",
+      //-   data: testObj,
+      //-   contentType: "application/json; charset=utf-8",
+      //-   dataType: "json",
+      //-   success: function () {
+      //-     console.log('YES WE DID IT');
+      //-     document.getElementById("texturlpng").innerHTML = 'emotion';
+      //-   },
+      //- });
     }
     //TIMER COUNT
     function begincount()  {

@@ -1,4 +1,30 @@
+var vision = require('@google-cloud/vision');
 
+// Authenticating on a per-API-basis. You don't need to do this if you auth on a
+// global basis (see Authentication section above).
+
+var visionClient = vision({
+  projectId: 'final-project-156014',
+  keyFilename: 'public/other/final-project-76fc6603c56a.json'
+});
+
+// Detect faces and the locations of their features in an image.
+visionClient.detectFaces('public/media/temp/joy.jpg')
+  .then((results) => {
+  const faces = results[0];
+
+  console.log('Faces:');
+  faces.forEach((face, i) => {
+    console.log(`  Face #${i + 1}:`);
+    console.log(`    Joy: ${face.joy}`);
+    console.log(`    Anger: ${face.anger}`);
+    console.log(`    Sorrow: ${face.sorrow}`);
+    console.log(`    Surprise: ${face.surprise}`);
+  });
+
+});
+
+/*
 // Imports the Google Cloud client libraries
 const Storage = require('@google-cloud/storage');
 const Vision = require('@google-cloud/vision');
@@ -7,12 +33,17 @@ const base64Img = require('base64-img');
 // Instantiates clients
 const storage = Storage();
 const vision = Vision();
+var visionClient = Vision({
+  projectId: 'grape-spaceship-123',
+  keyFilename: '/path/to/keyfile.json'
+});
 
 // Other stuff
 const bucketName = 'facialanalysisbucket';
 const uploadedFile = 'public/media/temp/image166.jpg';
 
 exports.upload = function(req, res) {
+
 
 	// Saves base64 as image.jpg into public/media/temp
 	const base64image = req.body.img;
@@ -34,7 +65,7 @@ exports.upload = function(req, res) {
 	// };
 
   // Performs face detection on the file
-  vision.detectFaces(uploadedFile)
+  visionClient.detectFaces(uploadedFile, function(err, faces) )
   .then((results) => {
     const faces = results[0];
     faces.forEach((face, i) => {
@@ -48,3 +79,4 @@ exports.upload = function(req, res) {
     });
   });
 };
+*/
