@@ -56,7 +56,6 @@ block content
       //- var imgString = '';
       var testObj = JSON.stringify({'img': dataURL});
       //- var fixedString = 
-      document.getElementById("texturlpng").innerHTML = testObj;
       $.ajax({
         url: "/sendimage",
         type: "POST",
@@ -64,11 +63,9 @@ block content
         contentType: "application/json; charset=utf-8",
         dataType: "json",
         success: function () {
-          console.log('success');
+          console.log('YES WE DID IT');
+          document.getElementById("texturlpng").innerHTML = 'emotion';
         },
-        error: function () {
-          console.log('There was some error while uploading Image');
-        }
       });
     }
     //TIMER COUNT
