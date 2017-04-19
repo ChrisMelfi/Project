@@ -9,11 +9,11 @@ block content
       p
         | In this test we will be looking at how facial analysis could be used in an interactive game.
     // CONTENT
-    .row
-      h3
-        | Scenario ends in 
-        span#countdowntimer 12 
-        |  Seconds
+    //- .row
+    //-   h3
+    //-     | Scenario ends in 
+    //-     span#countdowntimer 12 
+    //-     |  Seconds
     .row.greybackground
       .col-sm-12.game-instruction-happy Look happy.
       .col-sm-12.game-instruction-sad Look sad.
@@ -30,10 +30,10 @@ block content
         .canvas_container
           canvas#canvas
     .row.greybackground
-      p#texturlpng no
+      p#texturlpng
     .row
       a.btn.btn-default.btn-lg(href='/', role='button') Back
-      a.btn.btn-primary.btn-lg(href='/scenario_1_active', role='button') Begin Scenario
+      a.btn.btn-primary.btn-lg(href='/feedback_form', role='button') End Scenario
   script(src='js/show_camera.js')
   script.
     //DISPLAYS IMAGE ON CANVAS
@@ -71,14 +71,14 @@ block content
         },
       });
     }
-    //TIMER COUNT
-    function begincount()  {
-      var timeleft = 12;
-      var downloadTimer = setInterval(function(){
-        timeleft--;
-        document.getElementById("countdowntimer").textContent = timeleft;
-        if(timeleft <= 0) {
-          clearInterval(downloadTimer);
-        }
-      },1000);
-    }
+    //- //TIMER COUNT
+    //- function begincount()  {
+    //-   var timeleft = 12;
+    //-   var downloadTimer = setInterval(function(){
+    //-     timeleft--;
+    //-     document.getElementById("countdowntimer").textContent = timeleft;
+    //-     if(timeleft <= 0) {
+    //-       clearInterval(downloadTimer);
+    //-     }
+    //-   },1000);
+    //- }
