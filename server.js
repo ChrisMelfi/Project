@@ -43,14 +43,16 @@ app.use(bodyParser.urlencoded({limit: '50mb', extended: true, parameterLimit:500
 app.get('/', routeController.home);
 app.get('/about', routeController.about);
 app.get('/data', routeController.data);
-app.get('/feedback_form', routeController.feedback_form);
 app.get('/new_user', routeController.new_user);
 app.get('/scenario_1', routeController.scenario_1);
 app.get('/scenario_1_active', routeController.scenario_1_active);
+app.get('/scenario_1_feedback', routeController.scenario_1_feedback);
 app.get('/scenario_2', routeController.scenario_2);
 app.get('/scenario_2_active', routeController.scenario_2_active);
+app.get('/scenario_2_feedback', routeController.scenario_2_feedback);
 app.get('/scenario_3', routeController.scenario_3);
 app.get('/scenario_3_active', routeController.scenario_3_active);
+app.get('/scenario_3_feedback', routeController.scenario_3_feedback);
 app.get('/splash', routeController.splash);
 app.get('/terms', routeController.terms);
 app.post('/sendimage', sendImage.upload);

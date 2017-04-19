@@ -11,11 +11,11 @@ const vision = Vision();
 // Other stuff
 const bucketName = 'facialanalysisbucket';
 const uploadedFile = 'public/media/temp/image166.jpg';
-const base64image = req.body.img;
 
 exports.upload = function(req, res) {
 
 	// Saves base64 as image.jpg into public/media/temp
+	const base64image = req.body.img;
 	var filepath = base64Img.imgSync(base64image, 'public/media/temp/', 'image166');
 
   // Uploads a file to the bucket

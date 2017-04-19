@@ -29,16 +29,6 @@ exports.data = function(req, res) {
 /**
  * GET /about
  */
-exports.feedback_form = function(req, res) {
-  res.render('feedback_form', {
-    title: 'Feedback Form',
-    project:true
-  });
-};
-
-/**
- * GET /about
- */
 exports.new_user = function(req, res) {
   res.render('new_user', {
     title: 'New User',
@@ -69,6 +59,16 @@ exports.scenario_1_active = function(req, res) {
 /**
  * GET /about
  */
+exports.scenario_1_feedback = function(req, res) {
+  res.render('scenario_1_feedback', {
+    title: 'Scenario 1',
+    project:true
+  });
+};
+
+/**
+ * GET /about
+ */
 exports.scenario_2 = function(req, res) {
   res.render('scenario_2', {
     title: 'Scenario 2',
@@ -89,6 +89,16 @@ exports.scenario_2_active = function(req, res) {
 /**
  * GET /about
  */
+exports.scenario_2_feedback = function(req, res) {
+  res.render('scenario_2_feedback', {
+    title: 'Scenario 2',
+    project:true
+  });
+};
+
+/**
+ * GET /about
+ */
 exports.scenario_3 = function(req, res) {
   res.render('scenario_3', {
     title: 'Scenario 3',
@@ -101,6 +111,16 @@ exports.scenario_3 = function(req, res) {
  */
 exports.scenario_3_active = function(req, res) {
   res.render('scenario_3_active', {
+    title: 'Scenario 3',
+    project:true
+  });
+};
+
+/**
+ * GET /about
+ */
+exports.scenario_3_feedback = function(req, res) {
+  res.render('scenario_3_feedback', {
     title: 'Scenario 3',
     project:true
   });

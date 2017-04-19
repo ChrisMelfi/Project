@@ -30,7 +30,7 @@ block content
       .col-sm-12.distress_help Hey, is everything ok? You're looking a little upset.
     .row
       a.btn.btn-default.btn-lg(href='/', role='button') Back
-      a.btn.btn-primary.btn-lg(href='/feedback_form', role='button') End Scenario
+      a.btn.btn-primary.btn-lg(href='/scenario_1_feedback', role='button') End Scenario
   script(src='js/show_camera.js')
   script.
     //DISPLAYS IMAGE ON CANVAS
@@ -76,6 +76,7 @@ block content
         document.getElementById("countdowntimer").textContent = timeleft;
         if(timeleft <= 0) {
           clearInterval(downloadTimer);
+          clearInterval(snap);
         }
       },1000);
     }
