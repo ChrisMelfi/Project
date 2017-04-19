@@ -12,20 +12,25 @@ block content
     .row
       h3
         | Scenario ends in 
-        span#countdowntimer 20 
+        span#countdowntimer 12 
         |  Seconds
+    .row.greybackground
+      .col-sm-12.game-instruction-happy Look happy.
+      .col-sm-12.game-instruction-sad Look sad.
+      .col-sm-12.game-instruction-surprised Look surprised.
+      .col-sm-12.game-instruction-angry Look angry.
     .row.greybackground
       .col-sm-6
         h4 Live Video
-        video#video(autoplay='true', onplay='snap();setInterval(snap, 1500);begincount()')
+        video#video(autoplay='true', onplay='snap();setInterval(snap, 2000);begincount()')
+        // video#video(autoplay='true', onplay='snap()')
           | Video stream not available.
       .col-sm-6
         h4 Tested Frames
         .canvas_container
           canvas#canvas
     .row.greybackground
-      .col-sm-12.distress_ok User appears to be OK.
-      .col-sm-12.distress_help Hey, is everything ok? You're looking a little upset.
+      p#texturlpng no
     .row
       a.btn.btn-default.btn-lg(href='/', role='button') Back
       a.btn.btn-primary.btn-lg(href='/scenario_1_active', role='button') Begin Scenario
@@ -40,25 +45,40 @@ block content
     //add loadedmetadata which will helps to identify video attributes......
     video.addEventListener('loadedmetadata',function()
     {
-    ratio=video.videoWidth/video.videoHeight;
-    w=video.videoWidth-100;
-    h=parseInt(w/ratio,10);
-    canvas.width=w;
-    canvas.height=h;
+      ratio=video.videoWidth/video.videoHeight;
+      w=video.videoWidth-100;
+      h=parseInt(w/ratio,10);
+      canvas.width=w;
+      canvas.height=h;
     },false);
     ///define a function
     function snap()  {
-    context.fillRect(0,0,w,h);
-    context.drawImage(video,0,0,w,h);
+      context.fillRect(0,0,w,h);
+      context.drawImage(video,0,0,w,h);
+      var dataURL = canvas.toDataURL('image/jpeg', 0.9);
+      //- var imgString = '';
+      var testObj = JSON.stringify({'img': dataURL});
+      //- var fixedString = 
+      $.ajax({
+        url: "/sendimage",
+        type: "POST",
+        data: testObj,
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        success: function () {
+          console.log('YES WE DID IT');
+          document.getElementById("texturlpng").innerHTML = 'emotion';
+        },
+      });
     }
     //TIMER COUNT
     function begincount()  {
-    var timeleft = 20;
-    var downloadTimer = setInterval(function(){
-    timeleft--;
-    document.getElementById("countdowntimer").textContent = timeleft;
-    if(timeleft <= 0) {
-    clearInterval(downloadTimer);
-    }
-    },1000);
+      var timeleft = 12;
+      var downloadTimer = setInterval(function(){
+        timeleft--;
+        document.getElementById("countdowntimer").textContent = timeleft;
+        if(timeleft <= 0) {
+          clearInterval(downloadTimer);
+        }
+      },1000);
     }
