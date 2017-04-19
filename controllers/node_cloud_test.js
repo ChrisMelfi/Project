@@ -25,14 +25,15 @@ exports.upload = function(req, res) {
 
 	  console.log('Faces:');
 	  faces.forEach((face, i) => {
-		  const joyvalue = `Joy: ${face.joy}`;
-		  const angervalue = `Anger: ${face.anger}`;
-		  const sorrowvalue = `Sorrow: ${face.sorrow}`;
-		  const surprisevalue = `Suprise: ${face.surprise}`;
+		  const joyValue = `${face.joy}`;
+		  const angerValue = `${face.anger}`;
+		  const sorrowValue = `${face.sorrow}`;
+		  const surpriseValue = `${face.surprise}`;
 	    console.log(`  Face #${i + 1}:`);
-	    console.log(joyvalue, angervalue, sorrowvalue, surprisevalue);
-    	// res.send({status: joyvalue, angervalue, sorrowvalue, surprisevalue});
-    	res.json({status: 'hello'});
+	    console.log(joyValue, angerValue, sorrowValue, surpriseValue);
+    	res.json({'joy': joyValue, 'anger': angerValue, 'sorrow': sorrowValue, 'surprise': surpriseValue});
+    	res.send({'joy': joyValue, 'anger': angerValue, 'sorrow': sorrowValue, 'surprise': surpriseValue});
+    	res.end({'joy': joyValue, 'anger': angerValue, 'sorrow': sorrowValue, 'surprise': surpriseValue});
 	  });
 	});
 };
