@@ -16,6 +16,7 @@ dotenv.load();
 // Controllers
 var routeController = require('./controllers/route');
 var sendImage = require('./controllers/node_cloud_test');
+var scenario1 = require('./controllers/scenario_1');
 
 var app = express();
 
@@ -47,6 +48,7 @@ app.get('/new_user', routeController.new_user);
 app.get('/scenario_1', routeController.scenario_1);
 app.get('/scenario_1_active', routeController.scenario_1_active);
 app.get('/scenario_1_feedback', routeController.scenario_1_feedback);
+app.post('/scenario_1_feedback_post', scenario1.feedbackPost);
 app.get('/scenario_2', routeController.scenario_2);
 app.get('/scenario_2_active', routeController.scenario_2_active);
 app.get('/scenario_2_feedback', routeController.scenario_2_feedback);

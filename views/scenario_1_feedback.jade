@@ -8,43 +8,45 @@ block content
       h1 Post-Scenario Feedback
       p Now's your chance to feed back on this particular scenario experience.
     // CONTENT
-    form.text-left.col-sm-12.greybackground.paddingbottom
+    form#scenario_1_form.text-left.col-sm-12.greybackground.paddingbottom(name='scenario_1_form', method='post', action='/scenario_1_feedback_post')
+      .row.invisible
+        input#scenario_number(name='scenario', value='1')
       .row.col-sm-12
         .form-group
           h4
-            label How did it go? (required)
-          .radio-inline
+            label How did it go?
+          .radio
             label
-              input#optionsRadios1(type='radio', name='optionsRadios', value='option1')
+              input#optionsRadios1(type='radio', name='success', value='It all worked well')
               p It all worked well
-          .radio-inline
+          .radio
             label
-              input#optionsRadios2(type='radio', name='optionsRadios', value='option2')
+              input#optionsRadios2(type='radio', name='success', value='Some of it worked')
               p Some of it worked
-          .radio-inline
+          .radio
             label
-              input#optionsRadios3(type='radio', name='optionsRadios', value='option3')
+              input#optionsRadios3(type='radio', name='success', value='None of it worked')
               p None of it worked
         .form-group
           h4
             label(for='whathappenedtextarea') Please briefly describe your experience.
-          textarea#whathappenedtextarea.form-control(rows='2')
+          textarea#whathappenedtextarea.form-control(rows='2' name='explain')
         .form-group
           h4
             label Can you see the potential for facial analysis in the future of help and diagnosis? (required)
-          .radio-inline
+          .radio
             label
-              input#optionsRadios1(type='radio', name='optionsRadios1', value='option1')
-              p Yes
-          .radio-inline
+              input#optionsRadios1(type='radio', name='potential', value='Yes, I can see the potential')
+              p Yes, I can see the potential
+          .radio
             label
-              input#optionsRadios2(type='radio', name='optionsRadios1', value='option2')
-              p No
+              input#optionsRadios2(type='radio', name='potential', value='No, I cannot see the potential')
+              p No, I cannot see the potential
         .form-group
           h4
             label(for='whynottextarea') Do you have any other comments?
-          textarea#whynottextarea.form-control(rows='2')
+          textarea#whynottextarea.form-control(rows='2' name='comments')
       .row
         .form-group.text-center
           a.btn.btn-default.btn-lg(href='/data', role='button') Skip
-          button.btn.btn-primary.btn-lg(href='/data', type='submit') Submit
+          button.btn.btn-primary.btn-lg(type='submit' href='/') Submit
