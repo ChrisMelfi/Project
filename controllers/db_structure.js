@@ -17,10 +17,10 @@ mongo
 // select database (main_db)
 use main_db
 
-// create collection (all_feedback)
-db.all_feedback.insert([
+// create collection (userCL)
+db.userCL.insert([
 	{
-		name: 'testuser1',
+		_id: 'testuser1',
 		feedback: [
 		  {
 				scenario: '1',
@@ -39,7 +39,7 @@ db.all_feedback.insert([
 		]
 	},
 	{
-		name: 'testuser2',
+		_id: 'testuser2',
 		feedback: [
 		  {
 				scenario: '3',
@@ -65,21 +65,28 @@ use main_db
 
 
 // insert feedback data into user feedback
-db.all_feedback.update(
-	{name: 'testuser1'}, 
-	{$push: {'feedback': {
-		scenario: '2',
-		success: 'MORE NEW STUFF',
-		explain: 'asdfsuccess',
-		potential: 'sdfwooo',
-		comments: 'nasdfice',
-	}}}
-)
+// db.userCL.update(
+// 	{_id: 'testuser1'}, 
+// 	{$push: {'feedback': {
+// 		scenario: '2',
+// 		success: 'MORE NEW STUFF',
+// 		explain: 'asdfsuccess',
+// 		potential: 'sdfwooo',
+// 		comments: 'nasdfice',
+// 	}}}
+// )
 
 /*
 // return values of specific field
-db.all_feedback.find({},{"feedback.success":1}).pretty()
+db.userCL.find({},{"feedback.success":1}).pretty()
 
 // counts the number of docs in collection (names in all_feedback)
-db.all_feedback.find({},{"feedback.success":1}).count()
+db.userCL.find({},{"feedback.success":1}).count()
 */
+
+
+// db.collection.aggregate([
+// {$unwind:"$feedback"},
+// {$group:{_id:"$_date", sum:{$sum:1}}}
+
+// ])

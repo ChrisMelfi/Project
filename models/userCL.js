@@ -1,25 +1,28 @@
-var mongoose = require('mongoose')
+var mongoose = require('mongoose');
+mongoose.set('debug', true);
 
 var schemaOptions = {
 	timestamp: true,
 	toJSON: {
 		virtuals: true
 	}
-}
+};
 
 var feedbackSchema = new mongoose.Schema({
+	_id: false,
 	scenario: Number,
 	success: String,
 	explain: String,
 	potential: String,
 	comments: String,
-}, schemaOptions)
+	date: { type: Date, default: Date.now }
+},schemaOptions);
 
 var userSchema = new mongoose.Schema({
 	_id: String,
 	feedback: [feedbackSchema]
-}, schemaOptions)
+},schemaOptions);
 
-var User = mongoose.model('User', userSchema)
+var userCL = mongoose.model('userCL', userSchema, 'userCL');
 
-module.exports = User
+module.exports = userCL;

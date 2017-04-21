@@ -16,7 +16,7 @@ dotenv.load();
 // Controllers
 var routeController = require('./controllers/route');
 var sendImage = require('./controllers/node_cloud_test');
-var scenario1 = require('./controllers/scenario_1');
+var sendFeedback = require('./controllers/feedback');
 
 var app = express();
 
@@ -25,6 +25,9 @@ mongoose.connect(process.env.MONGODB);
 mongoose.connection.on('error', function() {
   console.log('MongoDB Connection Error. Please make sure that MongoDB is running.');
   process.exit(1);
+});
+mongoose.connection.once("open", function(callback) {
+	console.log("Connected to mainDB");
 });
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
@@ -48,7 +51,7 @@ app.get('/new_user', routeController.new_user);
 app.get('/scenario_1', routeController.scenario_1);
 app.get('/scenario_1_active', routeController.scenario_1_active);
 app.get('/scenario_1_feedback', routeController.scenario_1_feedback);
-app.post('/scenario_1_feedback_post', scenario1.feedbackPost);
+app.post('/feedback_post', sendFeedback.feedbackPost);
 app.get('/scenario_2', routeController.scenario_2);
 app.get('/scenario_2_active', routeController.scenario_2_active);
 app.get('/scenario_2_feedback', routeController.scenario_2_feedback);
