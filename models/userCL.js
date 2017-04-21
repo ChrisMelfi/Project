@@ -9,7 +9,6 @@ var schemaOptions = {
 };
 
 var feedbackSchema = new mongoose.Schema({
-	_id: false,
 	scenario: Number,
 	success: String,
 	explain: String,
