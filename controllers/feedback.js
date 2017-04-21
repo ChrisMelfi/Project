@@ -13,14 +13,21 @@ exports.feedbackPost = function(req, res, next) {
 			comments: req.body.comments
 		};
 		console.log(feedback),
-		user.feedback.push(feedback)
-		// user.save(function(err) {
-		// 	if (err) {
-		// 		console.log('Error')
-		// 	} else {
-		// 		console.log('Feedback sent:', feedback);
-		// 		res.redirect('/data')
-		// 	}
-		// })
+		user.feedback.push(feedback, function(err) {
+			if (err) {
+				console.log('Error')
+			} else {
+				console.log('Feedback sent:', feedback);
+				res.redirect('/data')
+			}
+		}),
+		user.save(function(err) {
+			if (err) {
+				console.log('Error')
+			} else {
+				console.log('Feedback sent:', feedback);
+				res.redirect('/data')
+			}
+		})
 	})
 }
