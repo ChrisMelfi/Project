@@ -12,7 +12,7 @@ exports.feedbackPost = function(req, res, next) {
 			potential: req.body.potential,
 			comments: req.body.comments
 		};
-		console.log(feedback),
+		console.log(feedback)
 		// user.feedback.push(feedback);
 		// user.save(function(err) {
 		// 	if (err) {
