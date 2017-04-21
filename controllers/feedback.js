@@ -12,14 +12,14 @@ exports.feedbackPost = function(req, res, next) {
 			potential: req.body.potential,
 			comments: req.body.comments
 		};
-		user.feedback.push(feedback);
-		user.save(function(err) {
-			if (err) {
-				console.log('Error')
-			} else {
-				console.log('Feedback sent:', feedback);
-				res.redirect('/data')
-			}
-		})
+		// user.feedback.push(feedback);
+		// user.save(function(err) {
+		// 	if (err) {
+		// 		console.log('Error')
+		// 	} else {
+		// 		console.log('Feedback sent:', feedback);
+		// 		res.redirect('/data')
+		// 	}
+		// })
 	})
 }
