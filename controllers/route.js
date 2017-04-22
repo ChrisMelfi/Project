@@ -25,7 +25,7 @@ exports.about = function(req, res) {
  */
 
 exports.data = function(req, res) {
-  userCL.find({'success': 'Some of it worked', 'scenario': '1'}, function(err, scenariosTestedTotal) {
+  userCL.find(function(err, scenariosTestedTotal) {
     if (err) console.log('error')
     console.log(scenariosTestedTotal.length);
     res.render('data', {
