@@ -1,12 +1,12 @@
 var mongoose = require('mongoose');
 mongoose.set('debug', true);
 
-var schemaOptions = {
-	timestamp: true,
-	toJSON: {
-		virtuals: true
-	}
-};
+// var schemaOptions = {
+// 	timestamp: true,
+// 	toJSON: {
+// 		virtuals: true
+// 	}
+// };
 
 // var feedbackSchema = new mongoose.Schema({
 // 	scenario: Number,
@@ -31,7 +31,7 @@ var feedbackSchema = new mongoose.Schema({
 	potential: String,
 	comments: String,
 	date: { type: Date, default: Date.now }
-},schemaOptions);
+});
 
 var userCL = mongoose.model('userCL', feedbackSchema, 'userCL');
 
