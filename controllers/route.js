@@ -1,3 +1,6 @@
+var mongoose = require('mongoose');
+var userCL = require('../models/userCL');
+
 /**
  * GET /
  */
@@ -20,11 +23,56 @@ exports.about = function(req, res) {
 /**
  * GET /about
  */
+// exports.data = function(req, res) {
+//   userCL.findOne({}, function(err, allFeedback) {
+//     if (err) console.log('error'),
+//     console.log(allFeedback)
+
+//     // userCL.findOne({'feedback.scenario': '2'}, function(err, feedbackSuccess) {
+//     // userCL.findOne({'feedback.scenario':1}, 'feedback.scenario', function(err, feedbackSuccess) {
+//     //   console.log(feedbackSuccess)
+//     //   if (err) console.log('error')
+//     //   res.render('data', {
+//     //     title: 'Data',
+//     //     // scenariosTested: allFeedback.length,
+//     //     // feedback: feedbackSuccess.length
+//     //   });
+//     // })
+//   })
+// };
+
 exports.data = function(req, res) {
-  res.render('data', {
-    title: 'Data'
-  });
+  userCL.find({'scenario': '1'}, 'scenario', function(err, scenario1Total) {
+    if (err) console.log('error')
+    console.log(scenario1Total.length);
+    res.render('data', {
+      title: 'Data',
+      scenariosTested: scenario1Total.length,
+    });
+  })
+  // userCL.find({'scenario': 1}, 'scenario', function(err, allFeedback) {
+  //   if (err) console.log('error')
+  //   console.log(allFeedback.length);
+  //   res.render('data', {
+  //     title: 'Data',
+  //     scenariosTested: allFeedback.length,
+  //   });
+  // })
 };
+
+    // userCL.findOne({'feedback.scenario': '2'}, function(err, feedbackSuccess) {
+    // userCL.findOne({'feedback.scenario':1}, 'feedback.scenario', function(err, feedbackSuccess) {
+    // userCL.findOne({'feedback.scenario':'2'}, {'feedback':{"$all":[{"$elemMatch":{'scenario':'2'}}]}}, function(err, feedbackSuccess) {
+    // userCL.find({}).populate({path:'feedback',match:{scenario:2}}).exec(function(err, feedbackSuccess) {  
+    // userCL.findOne({"feedback":{"$elemMatch":{'scenario':{'$all':[2]}}}}, function(err, feedbackSuccess) {
+      // console.log(feedbackSuccess)
+      // if (err) console.log('error')
+      // res.render('data', {
+      //   title: 'Data',
+      //   // scenariosTested: allFeedback.length,
+      //   // feedback: feedbackSuccess.length
+      // });
+    // })
 
 /**
  * GET /about
