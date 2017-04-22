@@ -22,7 +22,7 @@ block content
     .row.greybackground
       .col-sm-6
         h4 Live Video
-        video#video(autoplay='true', onplay='snap();setInterval(snap, 3000);begincount()')
+        video#video(autoplay='true', onplay='begincount()')
         // video#video(autoplay='true', onplay='snap()')
           | Video stream not available.
       .col-sm-6
@@ -52,33 +52,36 @@ block content
       canvas.height=h;
     },false);
     ///define a function
-    function snap()  {
-      context.fillRect(0,0,w,h);
-      context.drawImage(video,0,0,w,h);
-      var dataURL = canvas.toDataURL('image/jpeg', 0.9);
-      //- var imgString = '';
-      var testObj = JSON.stringify({'img': dataURL});
-      //- var fixedString = 
-      $.ajax({
-        url: "/scenario2send",
-        type: "POST",
-        data: testObj,
-        contentType: "application/json; charset=utf-8",
-        dataType: "json",
-        success: function (status) {
-          document.getElementById("texturlpng").innerHTML = status.distressResult;
-          console.log(status)
-        },
-      });
+    function begincount()  {
+      var timeleft = 20;
+      var downloadTimer = setInterval(function(){
+        timeleft--;
+        document.getElementById("countdowntimer").textContent = timeleft;
+        if(timeleft <= 0) {
+          clearInterval(downloadTimer);
+          clearInterval(snapTimer);
+          console.log('timer is up!!!!')
+        }
+      },1000);
+      var snap = function (){
+        context.fillRect(0,0,w,h);
+        context.drawImage(video,0,0,w,h);
+        var dataURL = canvas.toDataURL('image/jpeg', 0.9);
+        //- var imgString = '';
+        var testObj = JSON.stringify({'img': dataURL});
+        //- var fixedString = 
+        $.ajax({
+          url: "/scenario2send",
+          type: "POST",
+          data: testObj,
+          contentType: "application/json; charset=utf-8",
+          dataType: "json",
+          success: function (status) {
+            document.getElementById("gameResult").innerHTML = status.gameResult;
+            console.log(status)
+          },
+        });
+      }
+      snap()
+      var snapTimer = setInterval(snap,3000);
     }
-    //- //TIMER COUNT
-    //- function begincount()  {
-    //-   var timeleft = 12;
-    //-   var downloadTimer = setInterval(function(){
-    //-     timeleft--;
-    //-     document.getElementById("countdowntimer").textContent = timeleft;
-    //-     if(timeleft <= 0) {
-    //-       clearInterval(downloadTimer);
-    //-     }
-    //-   },1000);
-    //- }
