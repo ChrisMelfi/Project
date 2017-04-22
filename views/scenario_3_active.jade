@@ -12,12 +12,12 @@ block content
     .row
       h3
         | Scenario ends in 
-        span#countdowntimer 12 
+        span#countdowntimer 20 
         |  Seconds
     .row.greybackground
       .col-sm-6
         h4 Live Video
-        video#video(autoplay='true', onplay='snap();setInterval(snap, 2000);begincount()')
+        video#video(autoplay='true', onplay='snap();setInterval(snap, 3000);begincount()')
         // video#video(autoplay='true', onplay='snap()')
           | Video stream not available.
       .col-sm-6
@@ -71,7 +71,7 @@ block content
     }
     //TIMER COUNT
     function begincount()  {
-      var timeleft = 12;
+      var timeleft = 20;
       var downloadTimer = setInterval(function(){
         timeleft--;
         document.getElementById("countdowntimer").textContent = timeleft;
