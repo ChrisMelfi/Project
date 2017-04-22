@@ -76,7 +76,7 @@ exports.about = function(req, res) {
 exports.data = function(req, res) {
   userCL.find(function(err, scenariosTestedTotal) {
     if (err) {console.log('error')}
-
+    // Overview
     userCL.find({'success': 'It all worked well'}, function(err, scenariosWellTotal) {
     if (err) {console.log('error')}
       userCL.find({'success': 'Some of it worked'}, function(err, scenariosSomeTotal) {
@@ -87,7 +87,7 @@ exports.data = function(req, res) {
           if (err) {console.log('error')}
             userCL.find({'potential': 'No, I cannot see the potential'}, function(err, scenariosNoTotal) {
             if (err) {console.log('error')}
-
+              // Scenario 1
               userCL.find({'scenario': '1'}, function(err, scenario1TestedTotal) {
               if (err) {console.log('error')}
                 userCL.find({'scenario': '1', 'success': 'It all worked well'}, function(err, scenario1WellTotal) {
@@ -100,7 +100,7 @@ exports.data = function(req, res) {
                       if (err) {console.log('error')}
                         userCL.find({'scenario': '1', 'potential': 'No, I cannot see the potential'}, function(err, scenario1NoTotal) {
                         if (err) {console.log('error')}
-
+                          // Scenario 2
                           userCL.find({'scenario': '2'}, function(err, scenario2TestedTotal) {
                           if (err) {console.log('error')}
                             userCL.find({'scenario': '2', 'success': 'It all worked well'}, function(err, scenario2WellTotal) {
@@ -113,7 +113,7 @@ exports.data = function(req, res) {
                                   if (err) {console.log('error')}
                                     userCL.find({'scenario': '2', 'potential': 'No, I cannot see the potential'}, function(err, scenario2NoTotal) {
                                     if (err) {console.log('error')}
-
+                                      // Scenario 3
                                       userCL.find({'scenario': '3'}, function(err, scenario3TestedTotal) {
                                       if (err) {console.log('error')}
                                         userCL.find({'scenario': '3', 'success': 'It all worked well'}, function(err, scenario3WellTotal) {
@@ -126,6 +126,7 @@ exports.data = function(req, res) {
                                               if (err) {console.log('error')}
                                                 userCL.find({'scenario': '3', 'potential': 'No, I cannot see the potential'}, function(err, scenario3NoTotal) {
                                                 if (err) console.log('error');
+                                                // Render all
                                                 res.render('data', {
                                                   title: 'Data',
                                                   scenariosTested: scenariosTestedTotal.length,
@@ -159,7 +160,7 @@ exports.data = function(req, res) {
                                                   scenario3Yes: scenario3YesTotal.length,
                                                   scenario3Yes: scenario3YesTotal.length,
                                                   scenario3No: scenario3NoTotal.length,
-                                                }); 
+                                                  }); 
                                                 });
                                               });
                                             });
