@@ -17,8 +17,8 @@ mongo
 // select database (main_db)
 use main_db
 
-// create collection (userCL)
-db.userCL.insert([
+// create collection (allFeedback)
+db.allFeedback.insert([
 	{
 		_id: 'testuser1',
 		feedback: [
@@ -65,7 +65,7 @@ use main_db
 
 
 // insert feedback data into user feedback
-// db.userCL.update(
+// db.allFeedback.update(
 // 	{_id: 'testuser1'}, 
 // 	{$push: {'feedback': {
 // 		scenario: '2',
@@ -78,10 +78,10 @@ use main_db
 
 /*
 // return values of specific field
-db.userCL.find({},{"feedback.success":1}).pretty()
+db.allFeedback.find({},{"feedback.success":1}).pretty()
 
 // counts the number of docs in collection (names in all_feedback)
-db.userCL.find({},{"feedback.success":1}).count()
+db.allFeedback.find({},{"feedback.success":1}).count()
 */
 
 

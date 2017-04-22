@@ -1,9 +1,9 @@
 var mongoose = require('mongoose');
-var userCL = require('../models/userCL');
+var allFeedback = require('../models/allFeedback');
 
 exports.feedbackPost = function(req, res, next) {
 	var mongoose = require('mongoose');
-	var userCL = require('../models/userCL');
+	var allFeedback = require('../models/allFeedback');
 	var userFeedback = {
 		scenario: req.body.scenario,
 		success: req.body.success,
@@ -11,7 +11,7 @@ exports.feedbackPost = function(req, res, next) {
 		potential: req.body.potential,
 		comments: req.body.comments
 	};
-	var feedback = new userCL(userFeedback);
+	var feedback = new allFeedback(userFeedback);
 	feedback.save( function(err, data){
 		if(err){
 			console.log('error save');
@@ -23,12 +23,12 @@ exports.feedbackPost = function(req, res, next) {
 	})
 }
 // var mongoose = require('mongoose');
-// var userCL = require('../models/userCL');
+// var allFeedback = require('../models/allFeedback');
 
 // exports.feedbackPost = function(req, res, next) {
 // 	var mongoose = require('mongoose');
-// 	var userCL = require('../models/userCL');
-// 	userCL.findById('allUsers', function(err, user){
+// 	var allFeedback = require('../models/allFeedback');
+// 	allFeedback.findById('allUsers', function(err, user){
 // 		var feedback = {
 // 			scenario: req.body.scenario,
 // 			success: req.body.success,

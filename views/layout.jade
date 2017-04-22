@@ -39,9 +39,13 @@ html(lang='en')
               a(href='/about', class=(title==='About') ? 'navbarcustomcurrent' : '') About
             li
               a(href='/terms', class=(title==='Terms & Conditions') ? 'navbarcustomcurrent' : '') Terms & Conditions
-            button.btn.btn-default.navbar-btn(type='button') Sign Out
+            // button.btn.btn-default.navbar-btn(type='button') Sign Out
         // /.navbar-collapse
     block content
+    footer.footer
+      .container
+        .text-muted
+          © 2017 Chris Melfi, All Rights Reserved.
     // jQuery (necessary for Bootstrap's JavaScript plugins)
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js')
     // Include all compiled plugins (below), or include individual files as needed

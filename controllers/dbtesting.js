@@ -15,7 +15,7 @@
 
 // var updateDocument = function(db, callback) {
 //   // Get the documents collection
-//   var collection = db.collection('userCLs');
+//   var collection = db.collection('allFeedbacks');
 //   // Update document where a is 2, set b equal to 1
 //   collection.count({}, function(err, result) {
 //     console.log(result);

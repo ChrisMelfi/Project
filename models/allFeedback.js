@@ -22,7 +22,7 @@ mongoose.set('debug', true);
 // 	feedback: [feedbackSchema]
 // },schemaOptions);
 
-// var userCL = mongoose.model('userCL', userSchema, 'userCL');
+// var allFeedback = mongoose.model('allFeedback', userSchema, 'allFeedback');
 
 var feedbackSchema = new mongoose.Schema({
 	scenario: Number,
@@ -33,6 +33,6 @@ var feedbackSchema = new mongoose.Schema({
 	date: { type: Date, default: Date.now }
 });
 
-var userCL = mongoose.model('userCL', feedbackSchema, 'userCL');
+var allFeedback = mongoose.model('allFeedback', feedbackSchema, 'allFeedback');
 
-module.exports = userCL;
+module.exports = allFeedback;

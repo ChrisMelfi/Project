@@ -1,6 +1,5 @@
 var mongoose = require('mongoose');
-var userCL = require('../models/userCL');
-var async = require('async');
+var allFeedback = require('../models/allFeedback');
 
 /**
  * GET /
@@ -26,7 +25,7 @@ exports.about = function(req, res) {
  */
 
 // exports.data = function(req, res) {
-//   userCL.find(function(err, scenariosTestedTotal) {
+//   allFeedback.find(function(err, scenariosTestedTotal) {
 //     if (err) console.log('error')
 //     console.log(scenariosTestedTotal.length);
 //     res.render('data', {
@@ -38,25 +37,25 @@ exports.about = function(req, res) {
 
 // exports.data = function(req, res) {
 //   async.series([function(callback){
-//     userCL.find(function(err, scenariosTestedTotal) {
+//     allFeedback.find(function(err, scenariosTestedTotal) {
 //       if (err) console.log('callback error');
 //       callback(null, scenariosTestedTotal);
 //     })
 //   },
 //   function(callback){
-//     userCL.find({'success': 'It all worked well'}, function(err, scenariosWellTotal) {
+//     allFeedback.find({'success': 'It all worked well'}, function(err, scenariosWellTotal) {
 //       if (err) console.log('callback error');
 //       callback(null, scenariosWellTotal);
 //     })
 //   },
 //   function(callback){
-//     userCL.find({'success': 'Some of it worked'}, function(err, scenariosSomeTotal) {
+//     allFeedback.find({'success': 'Some of it worked'}, function(err, scenariosSomeTotal) {
 //       if (err) console.log('callback error');
 //       callback(null, scenariosSomeTotal);
 //     })
 //   },
 //   function(callback){
-//     userCL.find({'success': 'None of it worked'}, function(err, scenariosNoneTotal) {
+//     allFeedback.find({'success': 'None of it worked'}, function(err, scenariosNoneTotal) {
 //       if (err) console.log('callback error');
 //       callback(null, scenariosNoneTotal);
 //     })
@@ -74,57 +73,57 @@ exports.about = function(req, res) {
 
 
 exports.data = function(req, res) {
-  userCL.find(function(err, scenariosTestedTotal) {
+  allFeedback.find(function(err, scenariosTestedTotal) {
     if (err) {console.log('error')}
     // Overview
-    userCL.find({'success': 'It all worked well'}, function(err, scenariosWellTotal) {
+    allFeedback.find({'success': 'It all worked well'}, function(err, scenariosWellTotal) {
     if (err) {console.log('error')}
-      userCL.find({'success': 'Some of it worked'}, function(err, scenariosSomeTotal) {
+      allFeedback.find({'success': 'Some of it worked'}, function(err, scenariosSomeTotal) {
       if (err) {console.log('error')}
-        userCL.find({'success': 'None of it worked'}, function(err, scenariosNoneTotal) {
+        allFeedback.find({'success': 'None of it worked'}, function(err, scenariosNoneTotal) {
         if (err) {console.log('error')}
-          userCL.find({'potential': 'Yes, I can see the potential'}, function(err, scenariosYesTotal) {
+          allFeedback.find({'potential': 'Yes, I can see the potential'}, function(err, scenariosYesTotal) {
           if (err) {console.log('error')}
-            userCL.find({'potential': 'No, I cannot see the potential'}, function(err, scenariosNoTotal) {
+            allFeedback.find({'potential': 'No, I cannot see the potential'}, function(err, scenariosNoTotal) {
             if (err) {console.log('error')}
               // Scenario 1
-              userCL.find({'scenario': '1'}, function(err, scenario1TestedTotal) {
+              allFeedback.find({'scenario': '1'}, function(err, scenario1TestedTotal) {
               if (err) {console.log('error')}
-                userCL.find({'scenario': '1', 'success': 'It all worked well'}, function(err, scenario1WellTotal) {
+                allFeedback.find({'scenario': '1', 'success': 'It all worked well'}, function(err, scenario1WellTotal) {
                 if (err) {console.log('error')}
-                  userCL.find({'scenario': '1', 'success': 'Some of it worked'}, function(err, scenario1SomeTotal) {
+                  allFeedback.find({'scenario': '1', 'success': 'Some of it worked'}, function(err, scenario1SomeTotal) {
                   if (err) {console.log('error')}
-                    userCL.find({'scenario': '1', 'success': 'None of it worked'}, function(err, scenario1NoneTotal) {
+                    allFeedback.find({'scenario': '1', 'success': 'None of it worked'}, function(err, scenario1NoneTotal) {
                     if (err) {console.log('error')}
-                      userCL.find({'scenario': '1', 'potential': 'Yes, I can see the potential'}, function(err, scenario1YesTotal) {
+                      allFeedback.find({'scenario': '1', 'potential': 'Yes, I can see the potential'}, function(err, scenario1YesTotal) {
                       if (err) {console.log('error')}
-                        userCL.find({'scenario': '1', 'potential': 'No, I cannot see the potential'}, function(err, scenario1NoTotal) {
+                        allFeedback.find({'scenario': '1', 'potential': 'No, I cannot see the potential'}, function(err, scenario1NoTotal) {
                         if (err) {console.log('error')}
                           // Scenario 2
-                          userCL.find({'scenario': '2'}, function(err, scenario2TestedTotal) {
+                          allFeedback.find({'scenario': '2'}, function(err, scenario2TestedTotal) {
                           if (err) {console.log('error')}
-                            userCL.find({'scenario': '2', 'success': 'It all worked well'}, function(err, scenario2WellTotal) {
+                            allFeedback.find({'scenario': '2', 'success': 'It all worked well'}, function(err, scenario2WellTotal) {
                             if (err) {console.log('error')}
-                              userCL.find({'scenario': '2', 'success': 'Some of it worked'}, function(err, scenario2SomeTotal) {
+                              allFeedback.find({'scenario': '2', 'success': 'Some of it worked'}, function(err, scenario2SomeTotal) {
                               if (err) {console.log('error')}
-                                userCL.find({'scenario': '2', 'success': 'None of it worked'}, function(err, scenario2NoneTotal) {
+                                allFeedback.find({'scenario': '2', 'success': 'None of it worked'}, function(err, scenario2NoneTotal) {
                                 if (err) {console.log('error')}
-                                  userCL.find({'scenario': '2', 'potential': 'Yes, I can see the potential'}, function(err, scenario2YesTotal) {
+                                  allFeedback.find({'scenario': '2', 'potential': 'Yes, I can see the potential'}, function(err, scenario2YesTotal) {
                                   if (err) {console.log('error')}
-                                    userCL.find({'scenario': '2', 'potential': 'No, I cannot see the potential'}, function(err, scenario2NoTotal) {
+                                    allFeedback.find({'scenario': '2', 'potential': 'No, I cannot see the potential'}, function(err, scenario2NoTotal) {
                                     if (err) {console.log('error')}
                                       // Scenario 3
-                                      userCL.find({'scenario': '3'}, function(err, scenario3TestedTotal) {
+                                      allFeedback.find({'scenario': '3'}, function(err, scenario3TestedTotal) {
                                       if (err) {console.log('error')}
-                                        userCL.find({'scenario': '3', 'success': 'It all worked well'}, function(err, scenario3WellTotal) {
+                                        allFeedback.find({'scenario': '3', 'success': 'It all worked well'}, function(err, scenario3WellTotal) {
                                         if (err) {console.log('error')}
-                                          userCL.find({'scenario': '3', 'success': 'Some of it worked'}, function(err, scenario3SomeTotal) {
+                                          allFeedback.find({'scenario': '3', 'success': 'Some of it worked'}, function(err, scenario3SomeTotal) {
                                           if (err) {console.log('error')}
-                                            userCL.find({'scenario': '3', 'success': 'None of it worked'}, function(err, scenario3NoneTotal) {
+                                            allFeedback.find({'scenario': '3', 'success': 'None of it worked'}, function(err, scenario3NoneTotal) {
                                             if (err) {console.log('error')}
-                                              userCL.find({'scenario': '3', 'potential': 'Yes, I can see the potential'}, function(err, scenario3YesTotal) {
+                                              allFeedback.find({'scenario': '3', 'potential': 'Yes, I can see the potential'}, function(err, scenario3YesTotal) {
                                               if (err) {console.log('error')}
-                                                userCL.find({'scenario': '3', 'potential': 'No, I cannot see the potential'}, function(err, scenario3NoTotal) {
+                                                allFeedback.find({'scenario': '3', 'potential': 'No, I cannot see the potential'}, function(err, scenario3NoTotal) {
                                                 if (err) console.log('error');
                                                 // Render all
                                                 res.render('data', {
@@ -197,89 +196,89 @@ exports.data = function(req, res) {
 //   scenariosSome: scenariosSomeTotal.length,
 // }); 
 
-//   userCL.find(function(err, scenariosTestedTotal) {
+//   allFeedback.find(function(err, scenariosTestedTotal) {
 //   scenariosTested: scenariosTestedTotal.length,
 //   });
-//   userCL.find({'success': 'It all worked well'}, function(err, scenariosWellTotal) {
+//   allFeedback.find({'success': 'It all worked well'}, function(err, scenariosWellTotal) {
 //   scenariosWell: scenariosWellTotal.length,
 //   });
-//   userCL.find({'success': 'Some of it worked'}, function(err, scenariosSomeTotal) {
+//   allFeedback.find({'success': 'Some of it worked'}, function(err, scenariosSomeTotal) {
 //   scenariosSome: scenariosSomeTotal.length,
 //   });
-//   userCL.find({'success': 'None of it worked'}, function(err, scenariosNoneTotal) {
+//   allFeedback.find({'success': 'None of it worked'}, function(err, scenariosNoneTotal) {
 //   scenariosNone: scenariosNoneTotal.length,
 //   });
-//   userCL.find({'potential': 'Yes, I can see the potential'}, function(err, scenariosYesTotal) {
+//   allFeedback.find({'potential': 'Yes, I can see the potential'}, function(err, scenariosYesTotal) {
 //   scenariosYes: scenariosYesTotal.length,
 //   });
-//   userCL.find({'potential': 'No, I cannot see the potential'}, function(err, scenariosNoTotal) {
+//   allFeedback.find({'potential': 'No, I cannot see the potential'}, function(err, scenariosNoTotal) {
 //   scenariosNo: scenariosNoTotal.length,
 //   });
 
-//   userCL.find({'scenario': '1'}, function(err, scenario1TestedTotal) {
+//   allFeedback.find({'scenario': '1'}, function(err, scenario1TestedTotal) {
 //   scenario1Tested: scenario1TestedTotal.length,
 //   });
-//   userCL.find({'scenario': '1', 'success': 'It all worked well'}, function(err, scenario1WellTotal) {
+//   allFeedback.find({'scenario': '1', 'success': 'It all worked well'}, function(err, scenario1WellTotal) {
 //   scenario1Well: scenario1WellTotal.length,
 //   });
-//   userCL.find({'scenario': '1', 'success': 'Some of it worked'}, function(err, scenario1SomeTotal) {
+//   allFeedback.find({'scenario': '1', 'success': 'Some of it worked'}, function(err, scenario1SomeTotal) {
 //   scenario1Some: scenario1SomeTotal.length,
 //   });
-//   userCL.find({'scenario': '1', 'success': 'None of it worked'}, function(err, scenario1NoneTotal) {
+//   allFeedback.find({'scenario': '1', 'success': 'None of it worked'}, function(err, scenario1NoneTotal) {
 //   scenario1None: scenario1NoneTotal.length,
 //   });
-//   userCL.find({'scenario': '1', 'potential': 'Yes, I can see the potential'}, function(err, scenario1YesTotal) {
+//   allFeedback.find({'scenario': '1', 'potential': 'Yes, I can see the potential'}, function(err, scenario1YesTotal) {
 //   scenario1Yes: scenario1YesTotal.length,
 //   });
-//   userCL.find({'scenario': '1', 'potential': 'No, I cannot see the potential'}, function(err, scenario1NoTotal) {
+//   allFeedback.find({'scenario': '1', 'potential': 'No, I cannot see the potential'}, function(err, scenario1NoTotal) {
 //   scenario1No: scenario1NoTotal.length,
 //   });
 
-//   userCL.find({'scenario': '2'}, function(err, scenario2TestedTotal) {
+//   allFeedback.find({'scenario': '2'}, function(err, scenario2TestedTotal) {
 //   scenario2Tested: scenario2TestedTotalTotal.length,
 //   });
-//   userCL.find({'scenario': '2', 'success': 'It all worked well'}, function(err, scenario2WellTotal) {
+//   allFeedback.find({'scenario': '2', 'success': 'It all worked well'}, function(err, scenario2WellTotal) {
 //   scenario2Well: scenario2WellTotal.length,
 //   });
-//   userCL.find({'scenario': '2', 'success': 'Some of it worked'}, function(err, scenario2SomeTotal) {
+//   allFeedback.find({'scenario': '2', 'success': 'Some of it worked'}, function(err, scenario2SomeTotal) {
 //   scenario2Some: scenario2SomeTotal.length,
 //   });
-//   userCL.find({'scenario': '2', 'success': 'None of it worked'}, function(err, scenario2NoneTotal) {
+//   allFeedback.find({'scenario': '2', 'success': 'None of it worked'}, function(err, scenario2NoneTotal) {
 //   scenario2None: scenario2NoneTotal.length,
 //   });
-//   userCL.find({'scenario': '2', 'potential': 'Yes, I can see the potential'}, function(err, scenario2YesTotal) {
+//   allFeedback.find({'scenario': '2', 'potential': 'Yes, I can see the potential'}, function(err, scenario2YesTotal) {
 //   scenario2Yes: scenario2YesTotal.length,
 //   });
-//   userCL.find({'scenario': '2', 'potential': 'No, I cannot see the potential'}, function(err, scenario2NoTotal) {
+//   allFeedback.find({'scenario': '2', 'potential': 'No, I cannot see the potential'}, function(err, scenario2NoTotal) {
 //   scenario2No: scenario2NoTotal.length,
 //   });
 
-//   userCL.find({'scenario': '3'}, function(err, scenario3TestedTotal) {
+//   allFeedback.find({'scenario': '3'}, function(err, scenario3TestedTotal) {
 //   scenario3Tested: scenario3TestedTotal.length,
 //   });
-//   userCL.find({'scenario': '3', 'success': 'It all worked well'}, function(err, scenario3WellTotal) {
+//   allFeedback.find({'scenario': '3', 'success': 'It all worked well'}, function(err, scenario3WellTotal) {
 //   scenario3Well: scenario3WellTotal.length,
 //   });
-//   userCL.find({'scenario': '3', 'success': 'Some of it worked'}, function(err, scenario3SomeTotal) {
+//   allFeedback.find({'scenario': '3', 'success': 'Some of it worked'}, function(err, scenario3SomeTotal) {
 //   scenario3Some: scenario3SomeTotal.length,
 //   });
-//   userCL.find({'scenario': '3', 'success': 'None of it worked'}, function(err, scenario3NoneTotal) {
+//   allFeedback.find({'scenario': '3', 'success': 'None of it worked'}, function(err, scenario3NoneTotal) {
 //   scenario3None: scenario3NoneTotal.length,
 //   });
-//   userCL.find({'scenario': '3', 'potential': 'Yes, I can see the potential'}, function(err, scenario3YesTotal) {
+//   allFeedback.find({'scenario': '3', 'potential': 'Yes, I can see the potential'}, function(err, scenario3YesTotal) {
 //   scenario3Yes: scenario3YesTotal.length,
 //   });
-//   userCL.find({'scenario': '3', 'potential': 'No, I cannot see the potential'}, function(err, scenario3NoTotal) {
+//   allFeedback.find({'scenario': '3', 'potential': 'No, I cannot see the potential'}, function(err, scenario3NoTotal) {
 //   scenario3No: scenario3NoTotal.length,
 //   });
 // };
 
 
-  // userCL.findOne({'feedback.scenario': '2'}, function(err, feedbackSuccess) {
-  // userCL.findOne({'feedback.scenario':1}, 'feedback.scenario', function(err, feedbackSuccess) {
-  // userCL.findOne({'feedback.scenario':'2'}, {'feedback':{"$all":[{"$elemMatch":{'scenario':'2'}}]}}, function(err, feedbackSuccess) {
-  // userCL.find({}).populate({path:'feedback',match:{scenario:2}}).exec(function(err, feedbackSuccess) {  
-  // userCL.findOne({"feedback":{"$elemMatch":{'scenario':{'$all':[2]}}}}, function(err, feedbackSuccess) {
+  // allFeedback.findOne({'feedback.scenario': '2'}, function(err, feedbackSuccess) {
+  // allFeedback.findOne({'feedback.scenario':1}, 'feedback.scenario', function(err, feedbackSuccess) {
+  // allFeedback.findOne({'feedback.scenario':'2'}, {'feedback':{"$all":[{"$elemMatch":{'scenario':'2'}}]}}, function(err, feedbackSuccess) {
+  // allFeedback.find({}).populate({path:'feedback',match:{scenario:2}}).exec(function(err, feedbackSuccess) {  
+  // allFeedback.findOne({"feedback":{"$elemMatch":{'scenario':{'$all':[2]}}}}, function(err, feedbackSuccess) {
     // console.log(feedbackSuccess)
     // if (err) console.log('error')
     // res.render('data', {
