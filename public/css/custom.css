@@ -244,12 +244,17 @@ h4 {
 .navbarcustom {
   background-color: #fff;
   border: none;
+  font-size: 16pt;
 }
 
 .navbarcustomcurrent {
-  background-color: #fff !important;
+  background-color: #fff;
   font-weight: 700 !important;
   color: #6286AF !important;
+}
+
+.navbar-brand {
+  font-size: 16pt;
 }
 
 
@@ -307,6 +312,14 @@ video {
 
 .bluebackground {
   background-color: #6286AF;
+}
+
+.lightbluebackground {
+  background-color: #fff;
+}
+
+.whitecolor {
+  color: #777;
 }
 
 
