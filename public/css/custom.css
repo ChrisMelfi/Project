@@ -267,9 +267,24 @@ h4 {
   border-radius: 4px;
 }
 
+.canvas_container {
+  position: relative !important;
+}
+
+.canvas_container canvas, #canvas_overlay {
+  position: absolute !important;
+}
+
+#canvas_overlay {
+  width: 60%;
+  margin-left: 20%;
+  margin-top: 3%;
+}
+
 canvas {
   width: 100%;
   margin: 0 0 15px 0;
+  text-align: none !important;
 }
 
 video {

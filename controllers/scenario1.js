@@ -29,15 +29,13 @@ exports.upload = function(req, res) {
 		  var angerValue = `anger: ${face.anger}`;
 		  var sorrowValue = `sorrow: ${face.sorrow}`;
 		  var surpriseValue = `suprise: ${face.surprise}`;
-      var distressTrue = '.distress_help "Hey, is everything ok? You look a little upset.'
-      var distressFalse = '.distress_ok "User appears to be OK.'
 	    console.log(`  Face #${i + 1}:`);
 	    console.log(joyValue, angerValue, sorrowValue, surpriseValue);
-      if(joyValue.includes("true")) {
-        res.json({'done':'<div class="distress_help">you dead</div>'});
+      if(sorrowValue.includes("true")) {
+        res.json({'distressResult':'<div class="distress_help">Hey, is everything ok? You look a little upset.</div>'});
       }
       else {
-        res.json({'done':'<div class="distress_ok">you are fine</div>'});
+        res.json({'distressResult':'<div class="distress_ok">User appears to be OK.</div>'});
       }
     	//res.send({'joy': joyValue, 'anger': angerValue, 'sorrow': sorrowValue, 'surprise': surpriseValue});
     	//res.end({'joy': joyValue, 'anger': angerValue, 'sorrow': sorrowValue, 'surprise': surpriseValue});

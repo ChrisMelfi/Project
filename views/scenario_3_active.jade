@@ -15,13 +15,6 @@ block content
         span#countdowntimer 12 
         |  Seconds
     .row.greybackground
-      .col-sm-12.avatar-emoji
-        img#emoji-normal.img-circle(src='media/img/emojis/normal.svg', alt='Normal', width='140')
-        img#emoji-joy.img-circle(src='media/img/emojis/joy.svg', alt='Joy', width='140')
-        img#emoji-sorrow.img-circle(src='media/img/emojis/sorrow.svg', alt='Sorrow', width='140')
-        img#emoji-surprise.img-circle(src='media/img/emojis/surprise.svg', alt='Surprise', width='140')
-        img#emoji-anger.img-circle(src='media/img/emojis/anger.svg', alt='Anger', width='140')
-    .row.greybackground
       .col-sm-6
         h4 Live Video
         video#video(autoplay='true', onplay='snap();setInterval(snap, 2000);begincount()')
@@ -29,8 +22,11 @@ block content
           | Video stream not available.
       .col-sm-6
         h4 Tested Frames
-        .canvas_container
+        .canvas_container.text-left
           canvas#canvas
+          #canvas_overlay
+            #emoji
+              img.img-circle(src="media/img/emojis/normal.svg", alt="Normal", width="100%")
     .row.greybackground
       p#texturlpng
     .row
@@ -60,16 +56,16 @@ block content
       var dataURL = canvas.toDataURL('image/jpeg', 0.9);
       //- var imgString = '';
       var testObj = JSON.stringify({'img': dataURL});
-      //- var fixedString = 
+      var fixedString = 
       $.ajax({
-        url: "/sendimage",
+        url: "/scenario3send",
         type: "POST",
         data: testObj,
         contentType: "application/json; charset=utf-8",
         dataType: "json",
-        success: function () {
-          console.log('YES WE DID IT');
-          document.getElementById("texturlpng").innerHTML = 'emotion';
+        success: function (status) {
+          document.getElementById("emoji").innerHTML = status.emojiResult;
+          console.log(status)
         },
       });
     }
