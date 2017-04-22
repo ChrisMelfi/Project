@@ -9,6 +9,7 @@ var bodyParser = require('body-parser');
 var expressValidator = require('express-validator');
 var dotenv = require('dotenv');
 var mongoose = require('mongoose');
+var async = require('async');
 
 // Load environment variables from .env file
 dotenv.load();
