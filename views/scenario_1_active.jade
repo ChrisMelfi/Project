@@ -14,6 +14,7 @@ block content
         | Scenario ends in 
         span#countdowntimer 12 
         |  Seconds
+      #texturlpng hello
     .row.greybackground
       .col-sm-6
         h4 Live Video
@@ -62,8 +63,8 @@ block content
         contentType: "application/json; charset=utf-8",
         dataType: "json",
         success: function (status) {
-          // document.getElementById("texturlpng").innerHTML = status;
-          console.log('DONE WOOOOOOOO');
+          document.getElementById("texturlpng").innerHTML = status.done;
+          console.log(status)
         },
       });
     }

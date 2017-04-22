@@ -25,13 +25,20 @@ exports.upload = function(req, res) {
 
 	  console.log('Faces:');
 	  faces.forEach((face, i) => {
-		  const joyValue = `joy: ${face.joy}`;
-		  const angerValue = `anger: ${face.anger}`;
-		  const sorrowValue = `sorrow: ${face.sorrow}`;
-		  const surpriseValue = `suprise: ${face.surprise}`;
+		  var joyValue = `joy: ${face.joy}`;
+		  var angerValue = `anger: ${face.anger}`;
+		  var sorrowValue = `sorrow: ${face.sorrow}`;
+		  var surpriseValue = `suprise: ${face.surprise}`;
+      var distressTrue = '.distress_help "Hey, is everything ok? You look a little upset.'
+      var distressFalse = '.distress_ok "User appears to be OK.'
 	    console.log(`  Face #${i + 1}:`);
 	    console.log(joyValue, angerValue, sorrowValue, surpriseValue);
-    	res.json({'joy': joyValue, 'anger': angerValue, 'sorrow': sorrowValue, 'surprise': surpriseValue});
+      if(joyValue.includes("true")) {
+        res.json({'done':'<div class="distress_help">you dead</div>'});
+      }
+      else {
+        res.json({'done':'<div class="distress_ok">you are fine</div>'});
+      }
     	//res.send({'joy': joyValue, 'anger': angerValue, 'sorrow': sorrowValue, 'surprise': surpriseValue});
     	//res.end({'joy': joyValue, 'anger': angerValue, 'sorrow': sorrowValue, 'surprise': surpriseValue});
 	  });
