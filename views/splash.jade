@@ -5,9 +5,19 @@ block content
   .container.text-center
     // HEADER
     .page-header
-      h1 Lorem ipsum dolor sit amet, consectetur adipiscing!
-      p
-        | Mauris elit orci, ultricies id fermentum vel, porta et eros. Vestibulum condimentum lectus in convallis feugiat.
-      a.btn.btn-primary.btn-lg(href='/new_user', role='button') Get Started
-      a.btn.btn-primary.btn-lg(href='js/node_cloud_test.js', role='button') Test
+      h1 Hello!
+      p Welcome to the Facial Analysis Project Prototype
     // CONTENT
+    .row.text-left
+      .col-sm-6
+        h2 What is it?
+        p Facial analysis in tech right now is hand-down, pretty damn cool. We've got Snapchat filters, secure device unlocking and even auto-tagging in social media uploads. But what else can we do with it, and can we do it now?
+        p Looking strictly at reading emotion from the face in real-time, this application demonstrates three scenarios in which it could be helpful to do so, and then asks for your feedback on how well it worked. Is the available technology accurate enough, fast enough and ready for real-world use?
+      .col-sm-6.greybackground
+        h2 What you'll need:
+        ul
+          li Any computer or android device with a front-facing camera. (No iPhones, sorry!)
+          li A reliable internet connection.
+          li A face.
+    .row
+      a.btn.btn-primary.btn-lg(href='/home', role='button') Continue to Scenario Selection

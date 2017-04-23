@@ -394,7 +394,6 @@ exports.scenario_3_feedback = function(req, res) {
 exports.splash = function(req, res) {
   res.render('splash', {
     title: 'Welcome',
-    project:true
   });
 };
 

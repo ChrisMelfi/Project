@@ -287,11 +287,20 @@ canvas {
   width: 100%;
   margin: 0 0 15px 0;
   text-align: none !important;
+  transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  -moz-transform: scaleX(-1);
 }
 
 video {
   width: 100%;
   margin: 0 0 15px 0;
+  transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  -moz-transform: scaleX(-1);
+/*  transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);*/
 }
 
 .distress_ok {

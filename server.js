@@ -46,7 +46,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.json({limit: '50mb', type: 'application/json'}));
 app.use(bodyParser.urlencoded({limit: '50mb', extended: true, parameterLimit:5000000, type: 'application/json'}));
 
-app.get('/', routeController.home);
+app.get('/home', routeController.home);
 app.get('/about', routeController.about);
 app.get('/data', routeController.data);
 app.get('/new_user', routeController.new_user);
@@ -60,7 +60,7 @@ app.get('/scenario_2_feedback', routeController.scenario_2_feedback);
 app.get('/scenario_3', routeController.scenario_3);
 app.get('/scenario_3_active', routeController.scenario_3_active);
 app.get('/scenario_3_feedback', routeController.scenario_3_feedback);
-app.get('/splash', routeController.splash);
+app.get('/', routeController.splash);
 app.get('/terms', routeController.terms);
 app.post('/scenario1send', scenario1Send.upload);
 app.post('/scenario2send', scenario2Send.upload);
