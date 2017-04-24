@@ -1,7 +1,7 @@
 var vision = require('@google-cloud/vision');
 const base64Img = require('base64-img');
 
-const uploadedFile = 'public/media/temp/image166.jpg';
+const uploadedFile = 'public/media/temp/scenario3image.jpg';
 
 // Authenticating on a per-API-basis. You don't need to do this if you auth on a
 // global basis (see Authentication section above).
@@ -16,7 +16,7 @@ exports.upload = function(req, res) {
 
   // Saves base64 as image.jpg into public/media/temp
   const base64image = req.body.img;
-  var filepath = base64Img.imgSync(base64image, 'public/media/temp/', 'image166');
+  var filepath = base64Img.imgSync(base64image, 'public/media/temp/', 'scenario3image');
 
   // Detect faces and the locations of their features in an image.
   visionClient.detectFaces(uploadedFile)
