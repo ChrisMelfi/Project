@@ -28,7 +28,7 @@ block content
           canvas#canvas
     .row.greybackground
     .row
-      a.btn.btn-default.btn-lg(href='/', role='button') Back
+      a.btn.btn-default.btn-lg(href='/scenario_1', role='button') Back
       a.btn.btn-primary.btn-lg(href='/scenario_1_feedback', role='button') End Scenario
   script(src='js/show_camera.js')
   script.
@@ -49,7 +49,7 @@ block content
     },false);
     ///define a function
     function begincount()  {
-      var timeleft = 3;
+      var timeleft = 20;
       var downloadTimer = setInterval(function(){
         timeleft--;
         document.getElementById("countdowntimer").textContent = timeleft;

@@ -6,21 +6,18 @@ block content
     // HEADER
     .page-header
       h1 Matters of Privacy
-      p
-        | In this test we will be looking at how expression recognition could play a part in online communication. This test looks at simple text-based communication as an example.
+      p In this test we will be looking at how expression recognition could play a part in online communication. This test simulates simple video-call communication as an example.
     // CONTENT
     .row
       .col-sm-6.text-left
         h2 Why
-        p
-          | Video calling is massive today. Facebook, Skype and most major operating systems include some form of video calling functionality. But not everyone wants their face to be shown, whether it's for security reasons or otherwise.
-        p
-          | Could we use some sort of avatar to show our own real-time facial expressions instead of showing our faces?
-      .col-sm-6.text-left
-        h2 How
-        p
-          | When you press begin test, the facial expression mimicking avatar will appear for 15 seconds.
-        p Make some faces!
+        p Video calling is massive today. Facebook, Skype and most major operating systems include some form of video calling functionality. But not everyone wants their face to be shown, whether it's for security reasons or otherwise.
+        p Could we use some sort of avatar to show our own real-time facial expressions instead of showing our faces?
+      .col-sm-6.text-left.panel.greybackground
+        h2 Instructions
+        p As soon as you press begin scenario, the page will load.
+        p You will have 20 seconds to pull any faces that you believe show Neutrality, Joy, Surprise, Anger and Sorrow.
+        p If all goes well, an emoji will appear over your face, and will mimick the faces you pull.
     .row
-      a.btn.btn-default.btn-lg(href='/', role='button') Back
+      a.btn.btn-default.btn-lg(href='/home', role='button') Back
       a.btn.btn-primary.btn-lg(href='/scenario_3_active', role='button') Begin Scenario

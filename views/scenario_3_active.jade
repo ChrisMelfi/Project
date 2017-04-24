@@ -10,10 +10,12 @@ block content
         | In this test we will be looking at how expression recognition could play a part in online communication. This test looks at simple text-based communication as an example.
     // CONTENT
     .row
-      h3
-        | Scenario ends in 
-        span#countdowntimer 20 
-        |  Seconds
+      .col-sm-12.panel#countdown_container
+        h3
+          | Scenario ends in 
+          span#countdowntimer 20 
+          |  Seconds
+      .col-sm-12.panel#distress_result Pull some faces!
     .row.greybackground
       .col-sm-6
         h4 Live Video
@@ -30,7 +32,7 @@ block content
     .row.greybackground
       p#texturlpng
     .row
-      a.btn.btn-default.btn-lg(href='/', role='button') Back
+      a.btn.btn-default.btn-lg(href='/scenario_3', role='button') Back
       a.btn.btn-primary.btn-lg(href='/scenario_3_feedback', role='button') End Scenario
   script(src='js/show_camera.js')
   script.
@@ -58,7 +60,8 @@ block content
         if(timeleft <= 0) {
           clearInterval(downloadTimer);
           clearInterval(snapTimer);
-          console.log('timer is up!!!!')
+          document.getElementById("distress_result").innerHTML = ('<div class="distress_help">Time is up!</div><p>Did it recognise your faces? Please click End Scenario and tell us how it went.</p>');
+          document.getElementById("countdown_container").style.display = "none";
         }
       },1000);
       var snap = function (){
