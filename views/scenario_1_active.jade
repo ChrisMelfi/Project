@@ -10,11 +10,12 @@ block content
         | In this test we will be looking at the accuracy of Google's response to a user's sadness, distress and pain.
     // CONTENT
     .row
-      h3
-        | Scenario ends in 
-        span#countdowntimer 20 
-        |  Seconds
-      .greybackground#distress_result.distress_ok User appears to be OK.
+      .col-sm-12.panel#countdown_container
+        h3
+          | Scenario ends in 
+          span#countdowntimer 20 
+          |  Seconds
+      .col-sm-12.panel#distress_result Pull some sad faces!
     .row.greybackground
       .col-sm-6
         h4 Live Video
@@ -48,14 +49,15 @@ block content
     },false);
     ///define a function
     function begincount()  {
-      var timeleft = 20;
+      var timeleft = 3;
       var downloadTimer = setInterval(function(){
         timeleft--;
         document.getElementById("countdowntimer").textContent = timeleft;
         if(timeleft <= 0) {
           clearInterval(downloadTimer);
           clearInterval(snapTimer);
-          console.log('timer is up!!!!')
+          document.getElementById("distress_result").innerHTML = ('<div class="distress_help">Time is up!</div><p>Did it recognise your sad faces? Please click End Scenario and tell us how it went.</p>');
+          document.getElementById("countdown_container").style.display = "none";
         }
       },1000);
       var snap = function (){

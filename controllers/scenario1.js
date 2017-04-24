@@ -35,7 +35,7 @@ exports.upload = function(req, res) {
         res.json({'distressResult':'<div class="distress_help">Hey, is everything ok? You look a little upset.</div>'});
       }
       else {
-        res.json({'distressResult':'<div class="distress_ok">User appears to be OK.</div>'});
+        res.json({'distressResult':'<div class="distress_ok">User appears to be OK.</div><p>Pull some sad faces.</p>'});
       }
     	//res.send({'joy': joyValue, 'anger': angerValue, 'sorrow': sorrowValue, 'surprise': surpriseValue});
     	//res.end({'joy': joyValue, 'anger': angerValue, 'sorrow': sorrowValue, 'surprise': surpriseValue});
