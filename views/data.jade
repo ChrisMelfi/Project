@@ -2,7 +2,8 @@ extends layout
 
 block content
   //- p= data
-  //- p I am a sentence with #{data} in the middle
+  //- p I am a sentence with 
+         b #{data} in the middle
 
   // /.container-fluid
   .container.text-center
@@ -16,48 +17,73 @@ block content
         h2.whitecolor Overview
       .col-sm-4
         h2 Total Usage
-        // p Usernames Entered - #{usersTested}
-        p Scenarios Tested - #{scenariosTested}
+        // p Usernames Entered - 
+         b #{usersTested}
+        p Scenarios Tested - 
+         b.bluecolor #{scenariosTested}
       .col-sm-4
         h2 Total Feedback
-        p.greencolor It all worked well - #{scenariosWell}
-        p.orangecolor Some of it worked - #{scenariosSome}
-        p.redcolor None of it worked - #{scenariosNone}
+        p It all worked well - 
+         b.greencolor #{scenariosWell}
+        p Some of it worked - 
+         b.orangecolor #{scenariosSome}
+        p None of it worked - 
+         b.redcolor #{scenariosNone}
       .col-sm-4
         h2 Total Potential
-        p.greencolor Yes - #{scenariosYes}
-        p.redcolor No - #{scenariosNo}
+        p Yes - 
+         b.greencolor #{scenariosYes}
+        p No - 
+         b.redcolor #{scenariosNo}
     br
     .row.text-left.paddingbottom
       .col-sm-4.panel.greybackground
         h2 A Helping Hand
-        p Scenarios Tested - #{scenario1Tested}
+        p Scenarios Tested - 
+         b.bluecolor #{scenario1Tested}
         h3 Feedback
-        p.greencolor It all worked well - #{scenario1Well}
-        p.orangecolor Some of it worked - #{scenario1Some}
-        p.redcolor None of it worked - #{scenario1None}
+        p It all worked well - 
+         b.greencolor #{scenario1Well}
+        p Some of it worked - 
+         b.orangecolor #{scenario1Some}
+        p None of it worked - 
+         b.redcolor #{scenario1None}
         h3 Potential
-        p.greencolor Yes - #{scenario1Yes}
-        p.redcolor No - #{scenario1No}
+        p Yes - 
+         b.greencolor #{scenario1Yes}
+        p No - 
+         b.redcolor #{scenario1No}
       .col-sm-4.panel.greybackground
         h2 Pull That Face!
-        p Scenarios Tested - #{scenario2Tested}
+        p Scenarios Tested - 
+         b.bluecolor #{scenario2Tested}
         h3 Feedback
-        p.greencolor It all worked well - #{scenario2Well}
-        p.orangecolor Some of it worked - #{scenario2Some}
-        p.redcolor None of it worked - #{scenario2None}
+        p It all worked well - 
+         b.greencolor #{scenario2Well}
+        p Some of it worked - 
+         b.orangecolor #{scenario2Some}
+        p None of it worked - 
+         b.redcolor #{scenario2None}
         h3 Potential
-        p.greencolor Yes - #{scenario2Yes}
-        p.redcolor No - #{scenario2No}
+        p Yes - 
+         b.greencolor #{scenario2Yes}
+        p No - 
+         b.redcolor #{scenario2No}
       .col-sm-4.panel.greybackground
         h2 Matters of Privacy
-        p Scenarios Tested - #{scenario3Tested}
+        p Scenarios Tested - 
+         b.bluecolor #{scenario3Tested}
         h3 Feedback
-        p.greencolor It all worked well - #{scenario3Well}
-        p.orangecolor Some of it worked - #{scenario3Some}
-        p.redcolor None of it worked - #{scenario3None}
+        p It all worked well - 
+         b.greencolor #{scenario3Well}
+        p Some of it worked - 
+         b.orangecolor #{scenario3Some}
+        p None of it worked - 
+         b.redcolor #{scenario3None}
         h3 Potential
-        p.greencolor Yes - #{scenario3Yes}
-        p.redcolor No - #{scenario3No}
+        p Yes - 
+         b.greencolor #{scenario3Yes}
+        p No - 
+         b.redcolor #{scenario3No}
     .row
       a.btn.btn-primary.btn-lg.bluebackground(href='/home', role='button') Return to Scenario Selection
