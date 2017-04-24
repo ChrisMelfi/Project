@@ -256,6 +256,7 @@ h4 {
 
 .navbar-brand {
   font-size: 16pt;
+  padding: 10px;
 }
 
 /*.navbar-brand>img {
@@ -366,7 +367,10 @@ video {
   color: red;
 }
 
-
+.page-header img {
+  width: 30%;
+  max-width: 120px;
+}
 
 /* BUTTONS */
 
