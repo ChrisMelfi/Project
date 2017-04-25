@@ -3,8 +3,7 @@ const base64Img = require('base64-img');
 
 const uploadedFile = 'public/media/temp/scenario3image.jpg';
 
-// Authenticating on a per-API-basis. You don't need to do this if you auth on a
-// global basis (see Authentication section above).
+// Authenticating
 
 var visionClient = vision({
   projectId: 'final-project-156014',
@@ -46,8 +45,6 @@ exports.upload = function(req, res) {
       else {
         res.json({'emojiResult':'<img class="img-circle" src="media/img/emojis/normal.svg", alt="Normal", width="100%">'});
       }
-      //res.send({'joy': joyValue, 'anger': angerValue, 'sorrow': sorrowValue, 'surprise': surpriseValue});
-      //res.end({'joy': joyValue, 'anger': angerValue, 'sorrow': sorrowValue, 'surprise': surpriseValue});
     });
   });
 };

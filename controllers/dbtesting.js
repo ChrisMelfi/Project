@@ -1,3 +1,9 @@
+/*
+
+I made this file to get used to using JS commands to use MongoDB. This file is not included in the site
+
+*/
+
 // var MongoClient = require('mongodb').MongoClient
 //   , assert = require('assert');
 

@@ -1,6 +1,19 @@
 var mongoose = require('mongoose');
 mongoose.set('debug', true);
 
+var feedbackSchema = new mongoose.Schema({
+	scenario: Number,
+	success: String,
+	explain: String,
+	potential: String,
+	comments: String,
+	date: { type: Date, default: Date.now }
+});
+
+var allFeedback = mongoose.model('allFeedback', feedbackSchema, 'allFeedback');
+
+module.exports = allFeedback;
+
 // var schemaOptions = {
 // 	timestamp: true,
 // 	toJSON: {
@@ -23,16 +36,3 @@ mongoose.set('debug', true);
 // },schemaOptions);
 
 // var allFeedback = mongoose.model('allFeedback', userSchema, 'allFeedback');
-
-var feedbackSchema = new mongoose.Schema({
-	scenario: Number,
-	success: String,
-	explain: String,
-	potential: String,
-	comments: String,
-	date: { type: Date, default: Date.now }
-});
-
-var allFeedback = mongoose.model('allFeedback', feedbackSchema, 'allFeedback');
-
-module.exports = allFeedback;

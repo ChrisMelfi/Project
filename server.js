@@ -49,7 +49,6 @@ app.use(bodyParser.urlencoded({limit: '50mb', extended: true, parameterLimit:500
 app.get('/home', routeController.home);
 app.get('/about', routeController.about);
 app.get('/data', routeController.data);
-app.get('/new_user', routeController.new_user);
 app.get('/scenario_1', routeController.scenario_1);
 app.get('/scenario_1_active', routeController.scenario_1_active);
 app.get('/scenario_1_feedback', routeController.scenario_1_feedback);

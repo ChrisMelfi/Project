@@ -1,3 +1,9 @@
+/*
+
+I made this file to get used to using shell commands with MongoDB. This file is not included in the site
+
+*/
+
 /* db structure
 	User
 		id

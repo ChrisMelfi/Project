@@ -1,7 +1,6 @@
 extends layout
 
 block content
-  // /.container-fluid
   .container.text-center
     // HEADER
     .page-header
@@ -20,8 +19,6 @@ block content
       .col-sm-6
         h4 Live Video
         video#video(autoplay='true', onplay='begincount()')
-        // video#video(autoplay='true', onplay='snap()')
-          | Video stream not available.
       .col-sm-6
         h4 Tested Frames
         .canvas_container
@@ -30,6 +27,7 @@ block content
     .row
       a.btn.btn-default.btn-lg(href='/scenario_1', role='button') Back
       a.btn.btn-primary.btn-lg(href='/scenario_1_feedback', role='button') End Scenario
+  // SCRIPTS
   script(src='js/show_camera.js')
   script.
     //DISPLAYS IMAGE ON CANVAS

@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 var allFeedback = require('../models/allFeedback');
 
 /**
- * GET /
+ * GET /home
  */
 exports.home = function(req, res) {
   res.render('home', {
@@ -21,57 +21,8 @@ exports.about = function(req, res) {
 };
 
 /**
- * GET /about
+ * GET /data
  */
-
-// exports.data = function(req, res) {
-//   allFeedback.find(function(err, scenariosTestedTotal) {
-//     if (err) console.log('error')
-//     console.log(scenariosTestedTotal.length);
-//     res.render('data', {
-//       title: 'Data',
-//       scenariosTested: scenariosTestedTotal.length,
-//     });
-//   });
-// };
-
-// exports.data = function(req, res) {
-//   async.series([function(callback){
-//     allFeedback.find(function(err, scenariosTestedTotal) {
-//       if (err) console.log('callback error');
-//       callback(null, scenariosTestedTotal);
-//     })
-//   },
-//   function(callback){
-//     allFeedback.find({'success': 'It all worked well'}, function(err, scenariosWellTotal) {
-//       if (err) console.log('callback error');
-//       callback(null, scenariosWellTotal);
-//     })
-//   },
-//   function(callback){
-//     allFeedback.find({'success': 'Some of it worked'}, function(err, scenariosSomeTotal) {
-//       if (err) console.log('callback error');
-//       callback(null, scenariosSomeTotal);
-//     })
-//   },
-//   function(callback){
-//     allFeedback.find({'success': 'None of it worked'}, function(err, scenariosNoneTotal) {
-//       if (err) console.log('callback error');
-//       callback(null, scenariosNoneTotal);
-//     })
-//   }],
-//   function(err, res){
-//     res.render('data', {
-//       title: 'Data',
-//       scenariosTested: scenariosTestedTotal.length,
-//       scenariosWell: scenariosWellTotal.length,
-//       scenariosSome: scenariosSomeTotal.length,
-//       scenariosNone: scenariosNoneTotal.length,
-//     });
-//   });
-// };
-
-
 exports.data = function(req, res) {
   allFeedback.find(function(err, scenariosTestedTotal) {
     if (err) {console.log('error')}
@@ -189,6 +140,54 @@ exports.data = function(req, res) {
   });
 };
 
+
+// exports.data = function(req, res) {
+//   allFeedback.find(function(err, scenariosTestedTotal) {
+//     if (err) console.log('error')
+//     console.log(scenariosTestedTotal.length);
+//     res.render('data', {
+//       title: 'Data',
+//       scenariosTested: scenariosTestedTotal.length,
+//     });
+//   });
+// };
+
+// exports.data = function(req, res) {
+//   async.series([function(callback){
+//     allFeedback.find(function(err, scenariosTestedTotal) {
+//       if (err) console.log('callback error');
+//       callback(null, scenariosTestedTotal);
+//     })
+//   },
+//   function(callback){
+//     allFeedback.find({'success': 'It all worked well'}, function(err, scenariosWellTotal) {
+//       if (err) console.log('callback error');
+//       callback(null, scenariosWellTotal);
+//     })
+//   },
+//   function(callback){
+//     allFeedback.find({'success': 'Some of it worked'}, function(err, scenariosSomeTotal) {
+//       if (err) console.log('callback error');
+//       callback(null, scenariosSomeTotal);
+//     })
+//   },
+//   function(callback){
+//     allFeedback.find({'success': 'None of it worked'}, function(err, scenariosNoneTotal) {
+//       if (err) console.log('callback error');
+//       callback(null, scenariosNoneTotal);
+//     })
+//   }],
+//   function(err, res){
+//     res.render('data', {
+//       title: 'Data',
+//       scenariosTested: scenariosTestedTotal.length,
+//       scenariosWell: scenariosWellTotal.length,
+//       scenariosSome: scenariosSomeTotal.length,
+//       scenariosNone: scenariosNoneTotal.length,
+//     });
+//   });
+// };
+
 // res.render('data', {
 //   title: 'Data',
 //   scenariosTested: scenariosTestedTotal.length,
@@ -289,17 +288,7 @@ exports.data = function(req, res) {
   // })
 
 /**
- * GET /about
- */
-exports.new_user = function(req, res) {
-  res.render('new_user', {
-    title: 'New User',
-    project:true
-  });
-};
-
-/**
- * GET /about
+ * GET /scenario_1
  */
 exports.scenario_1 = function(req, res) {
   res.render('scenario_1', {
@@ -309,7 +298,7 @@ exports.scenario_1 = function(req, res) {
 };
 
 /**
- * GET /about
+ * GET /scenario_1_active
  */
 exports.scenario_1_active = function(req, res) {
   res.render('scenario_1_active', {
@@ -319,7 +308,7 @@ exports.scenario_1_active = function(req, res) {
 };
 
 /**
- * GET /about
+ * GET /scenario_1_feedback
  */
 exports.scenario_1_feedback = function(req, res) {
   res.render('scenario_1_feedback', {
@@ -329,7 +318,7 @@ exports.scenario_1_feedback = function(req, res) {
 };
 
 /**
- * GET /about
+ * GET /scenario_2
  */
 exports.scenario_2 = function(req, res) {
   res.render('scenario_2', {
@@ -339,7 +328,7 @@ exports.scenario_2 = function(req, res) {
 };
 
 /**
- * GET /about
+ * GET /scenario_2_active
  */
 exports.scenario_2_active = function(req, res) {
   res.render('scenario_2_active', {
@@ -349,7 +338,7 @@ exports.scenario_2_active = function(req, res) {
 };
 
 /**
- * GET /about
+ * GET /scenario_2_feedback
  */
 exports.scenario_2_feedback = function(req, res) {
   res.render('scenario_2_feedback', {
@@ -359,7 +348,7 @@ exports.scenario_2_feedback = function(req, res) {
 };
 
 /**
- * GET /about
+ * GET /scenario_3
  */
 exports.scenario_3 = function(req, res) {
   res.render('scenario_3', {
@@ -369,7 +358,7 @@ exports.scenario_3 = function(req, res) {
 };
 
 /**
- * GET /about
+ * GET /scenario_3_active
  */
 exports.scenario_3_active = function(req, res) {
   res.render('scenario_3_active', {
@@ -379,7 +368,7 @@ exports.scenario_3_active = function(req, res) {
 };
 
 /**
- * GET /about
+ * GET /scenario_3_feedback
  */
 exports.scenario_3_feedback = function(req, res) {
   res.render('scenario_3_feedback', {
@@ -389,7 +378,7 @@ exports.scenario_3_feedback = function(req, res) {
 };
 
 /**
- * GET /about
+ * GET /splash
  */
 exports.splash = function(req, res) {
   res.render('splash', {
@@ -398,7 +387,7 @@ exports.splash = function(req, res) {
 };
 
 /**
- * GET /about
+ * GET /terms
  */
 exports.terms = function(req, res) {
   res.render('terms', {
